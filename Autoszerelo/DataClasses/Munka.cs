@@ -8,7 +8,7 @@ namespace Autoszerelo.DataClasses
         public Guid UgyfelSzam {  get; private set; }
         [RegularExpression("^[A-Z]{3}-[0-9]{3}$")]
         public string Rendszam { get; private set; }
-        //validacio
+        [Range(typeof(DateOnly), "1900-01-01", "2030-01-01")]
         public DateOnly GyartasiEv {  get; private set; }
         public MunkaKategoria MunkaKategoria { get; private set; }
         public string HibaRovidLeirasa { get; private set; }
