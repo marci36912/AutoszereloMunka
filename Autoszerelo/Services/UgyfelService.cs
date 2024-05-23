@@ -4,29 +4,31 @@ namespace Autoszerelo.Services
 {
     public class UgyfelService : IUgyfelService
     {
+        private List<Ugyfel> _ugyfelek = new();
         void IUgyfelService.Add(Ugyfel ugyfel)
         {
-            throw new NotImplementedException();
+            _ugyfelek.Add(ugyfel);
         }
 
         void IUgyfelService.Delete(Guid ID)
         {
-            throw new NotImplementedException();
+            _ugyfelek.Remove(_ugyfelek.First(x => x.Ugyfelszam == ID));
         }
 
-        void IUgyfelService.Get(Guid ID)
+        Ugyfel IUgyfelService.Get(Guid ID)
         {
-            throw new NotImplementedException();
+            return _ugyfelek.FirstOrDefault(x => x.Ugyfelszam == ID);
         }
 
-        void IUgyfelService.GetAll()
+        List<Ugyfel> IUgyfelService.GetAll()
         {
-            throw new NotImplementedException();
+            return _ugyfelek;
         }
 
         void IUgyfelService.Update(Ugyfel ugyfel)
         {
-            throw new NotImplementedException();
+            int index =  _ugyfelek.FindIndex(x => x.Ugyfelszam == ugyfel.Ugyfelszam);
+            _ugyfelek[index] = ugyfel;
         }
     }
 }
