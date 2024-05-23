@@ -4,29 +4,31 @@ namespace Autoszerelo.Services
 {
     public class MunkaService : IMunkaService
     {
-        void IMunkaService.Add(Munka ugyfel)
+        private List<Munka> _munkak = new();
+        void IMunkaService.Add(Munka munka)
         {
-            throw new NotImplementedException();
+            _munkak.Add(munka);
         }
 
         void IMunkaService.Delete(Guid ID)
         {
-            throw new NotImplementedException();
+            _munkak.Remove(_munkak.FirstOrDefault(x => x.MunkaAzonosito == ID));
         }
 
-        void IMunkaService.Get(Guid ID)
+        Munka IMunkaService.Get(Guid ID)
         {
-            throw new NotImplementedException();
+            return _munkak.FirstOrDefault(x => x.MunkaAzonosito == ID);
         }
 
-        void IMunkaService.GetAll()
+        List<Munka> IMunkaService.GetAll()
         {
-            throw new NotImplementedException();
+            return _munkak;
         }
 
-        void IMunkaService.Update(Munka ugyfel)
+        void IMunkaService.Update(Munka munka)
         {
-            throw new NotImplementedException();
+            int index = _munkak.IndexOf(_munkak.FirstOrDefault(x => x.MunkaAzonosito == munka.MunkaAzonosito));
+            _munkak[index] = munka;
         }
     }
 }
