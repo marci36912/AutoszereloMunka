@@ -1,4 +1,6 @@
 
+using Autoszerelo.Services;
+
 namespace Autoszerelo
 {
     public class Program
@@ -13,6 +15,9 @@ namespace Autoszerelo
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddSingleton<IUgyfelService, UgyfelService>();
+            builder.Services.AddSingleton<IMunkaService, MunkaService>();
 
             var app = builder.Build();
 

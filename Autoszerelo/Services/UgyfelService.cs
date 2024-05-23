@@ -12,7 +12,7 @@ namespace Autoszerelo.Services
 
         void IUgyfelService.Delete(Guid ID)
         {
-            _ugyfelek.Remove(_ugyfelek.First(x => x.Ugyfelszam == ID));
+            _ugyfelek.Remove(_ugyfelek.FirstOrDefault(x => x.Ugyfelszam == ID));
         }
 
         Ugyfel IUgyfelService.Get(Guid ID)
