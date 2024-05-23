@@ -3,8 +3,8 @@
     public enum MunkaKategoria
     {
         Karosszeria,
-        motor,
-        futomu,
-        fekberendezes
+        Motor,
+        Futomu,
+        Fekberendezes
     }
 }
