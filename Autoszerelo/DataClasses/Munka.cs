@@ -8,10 +8,10 @@
         public string Rendszam { get; private set; }
         //validacio
         public DateOnly GyartasiEv {  get; private set; }
-        //munka kategoria
+        public MunkaKategoria MunkaKategoria { get; private set; }
         public string HibaRovidLeirasa { get; private set; }
         //validacio
         public int HibaSulyossaga { get; private set; }
-        //munka allapota
+        public MunkaAllapot MunkaAllapot { get; private set; }
     }
 }
