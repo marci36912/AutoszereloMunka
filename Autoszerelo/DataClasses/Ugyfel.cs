@@ -13,7 +13,7 @@ namespace Autoszerelo.DataClasses
             MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
             MaxLength(50, ErrorMessage = "Legfeljebb 50 karakter megadasa engedelyezett!")]
         public string Nev { get; set; } = null!;
-        [RegularExpression("[^\\s-]+", ErrorMessage = "A szoveg nem tartalmazhat csak szokozoket!"),
+        [RegularExpression("[^\\S-]+", ErrorMessage = "A szoveg nem tartalmazhat csak szokozoket!"),
             MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
             MaxLength(100, ErrorMessage = "Legfeljebb 100 karakter megadasa engedelyezett!")]
         public string Lakcim { get; set; } = null!;
