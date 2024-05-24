@@ -12,18 +12,18 @@ namespace Autoszerelo.DataClasses
         [RegularExpression("^[A-Za-z]+[A-Za-z]*", ErrorMessage = "A nevnek csak kis, es nagybetuket szabad tartalmaznia!"),
             MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
             MaxLength(50, ErrorMessage = "Legfeljebb 50 karakter megadasa engedelyezett!")]
-        public string Nev {  get; set; }
-        [RegularExpression("[^\\s-]+"),
+        public string Nev { get; set; } = null!;
+        [RegularExpression("[^\\s-]+", ErrorMessage = "A szoveg nem tartalmazhat csak szokozoket!"),
             MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
             MaxLength(100, ErrorMessage = "Legfeljebb 100 karakter megadasa engedelyezett!")]
-        public string Lakcim { get; set; }
+        public string Lakcim { get; set; } = null!;
         [EmailAddress,
             MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
             MaxLength(100, ErrorMessage = "Legfeljebb 100 karakter megadasa engedelyezett!")]
-        public string Email { get; set; }
+        public string Email { get; set; } = null!;
         
 
         //Navigation
-        public virtual ICollection<Munka> Munkak {  get; set; }
+        public virtual ICollection<Munka>? Munkak {  get; set; }
     }
 }
