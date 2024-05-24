@@ -8,11 +8,14 @@ namespace Autoszerelo.DataClasses
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Ugyfelszam {  get; private set; }
-        [ForeignKey(nameof(Ugyfel))]
-        public string Nev {  get; private set; }
-        public string Lakcim { get; private set; }
+        public Guid Ugyfelszam {  get; set; }
+        public string Nev {  get; set; }
+        public string Lakcim { get; set; }
         [EmailAddress]
-        public string Email { get; private set; }
+        public string Email { get; set; }
+        
+
+        //Navigation
+        public virtual ICollection<Munka> Munkak {  get; set; }
     }
 }

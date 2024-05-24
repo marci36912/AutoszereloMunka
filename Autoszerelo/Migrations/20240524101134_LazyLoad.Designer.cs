@@ -4,6 +4,7 @@ using Autoszerelo.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Autoszerelo.Migrations
 {
     [DbContext(typeof(AutoszereloDbContext))]
-    partial class AutoszereloDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240524101134_LazyLoad")]
+    partial class LazyLoad
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,8 +59,6 @@ namespace Autoszerelo.Migrations
 
                     b.HasKey("MunkaAzonosito");
 
-                    b.HasIndex("UgyfelSzam");
-
                     b.ToTable("Munkak");
                 });
 
@@ -82,22 +83,6 @@ namespace Autoszerelo.Migrations
                     b.HasKey("Ugyfelszam");
 
                     b.ToTable("Ugyfelek");
-                });
-
-            modelBuilder.Entity("Autoszerelo.DataClasses.Munka", b =>
-                {
-                    b.HasOne("Autoszerelo.DataClasses.Ugyfel", "Ugyfelek")
-                        .WithMany("Munkak")
-                        .HasForeignKey("UgyfelSzam")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ugyfelek");
-                });
-
-            modelBuilder.Entity("Autoszerelo.DataClasses.Ugyfel", b =>
-                {
-                    b.Navigation("Munkak");
                 });
 #pragma warning restore 612, 618
         }
