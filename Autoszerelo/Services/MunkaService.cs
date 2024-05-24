@@ -1,34 +1,55 @@
-﻿using Autoszerelo.DataClasses;
+﻿using Autoszerelo.Database;
+using Autoszerelo.DataClasses;
 
 namespace Autoszerelo.Services
 {
     public class MunkaService : IMunkaService
     {
-        private List<Munka> _munkak = new();
-        void IMunkaService.Add(Munka munka)
+        private readonly AutoszereloDbContext _dbContext;
+
+        public MunkaService(AutoszereloDbContext dbContext)
         {
-            _munkak.Add(munka);
+            _dbContext = dbContext;
         }
 
-        void IMunkaService.Delete(Guid ID)
+        public void Add(Munka munka)
         {
-            _munkak.Remove(_munkak.FirstOrDefault(x => x.MunkaAzonosito == ID));
+            _dbContext.Munkak.Add(munka);
+
+            _dbContext.SaveChanges();
         }
 
-        Munka IMunkaService.Get(Guid ID)
+        public void Delete(Guid ID)
         {
-            return _munkak.FirstOrDefault(x => x.MunkaAzonosito == ID);
+            var munka = Get(ID);
+            _dbContext.Munkak.Remove(munka);
+
+            _dbContext.SaveChanges();
         }
 
-        List<Munka> IMunkaService.GetAll()
+        public Munka Get(Guid ID)
         {
-            return _munkak;
+            return _dbContext.Munkak.Find(ID);
         }
 
-        void IMunkaService.Update(Munka munka)
+        public List<Munka> GetAll()
         {
-            int index = _munkak.IndexOf(_munkak.FirstOrDefault(x => x.MunkaAzonosito == munka.MunkaAzonosito));
-            _munkak[index] = munka;
+            return _dbContext.Munkak.ToList();
+        }
+
+        public void Update(Munka munka)
+        {
+            var updatedMunka = Get(munka.MunkaAzonosito);
+
+            updatedMunka.UgyfelSzam = munka.UgyfelSzam;
+            updatedMunka.Rendszam = munka.Rendszam;
+            updatedMunka.GyartasiEv = munka.GyartasiEv;
+            updatedMunka.MunkaKategoria = munka.MunkaKategoria;
+            updatedMunka.HibaRovidLeirasa = munka.HibaRovidLeirasa;
+            updatedMunka.HibaSulyossaga = munka.HibaSulyossaga;
+            updatedMunka.MunkaAllapot = munka.MunkaAllapot;
+
+            _dbContext.SaveChanges();
         }
     }
 }
