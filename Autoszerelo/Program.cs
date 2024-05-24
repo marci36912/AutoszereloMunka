@@ -1,5 +1,7 @@
 
+using Autoszerelo.Database;
 using Autoszerelo.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace Autoszerelo
 {
@@ -15,6 +17,12 @@ namespace Autoszerelo
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<AutoszereloDbContext>(options =>
+            {
+                string conncetion = builder.Configuration.GetConnectionString("AutoszereloDbConnection");
+                options.UseMySql(conncetion, ServerVersion.AutoDetect(conncetion));
+            }, ServiceLifetime.Singleton);
 
             builder.Services.AddSingleton<IUgyfelService, UgyfelService>();
             builder.Services.AddSingleton<IMunkaService, MunkaService>();
