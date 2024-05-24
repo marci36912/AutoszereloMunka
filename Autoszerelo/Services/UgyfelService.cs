@@ -1,34 +1,51 @@
-﻿using Autoszerelo.DataClasses;
+﻿using Autoszerelo.Database;
+using Autoszerelo.DataClasses;
 
 namespace Autoszerelo.Services
 {
     public class UgyfelService : IUgyfelService
     {
-        private List<Ugyfel> _ugyfelek = new();
-        void IUgyfelService.Add(Ugyfel ugyfel)
+        private AutoszereloDbContext _dbContext;
+        public UgyfelService(AutoszereloDbContext dbContext)
         {
-            _ugyfelek.Add(ugyfel);
+            _dbContext = dbContext;
         }
 
-        void IUgyfelService.Delete(Guid ID)
+        public void Add(Ugyfel ugyfel)
         {
-            _ugyfelek.Remove(_ugyfelek.FirstOrDefault(x => x.Ugyfelszam == ID));
+            _dbContext.Ugyfelek.Add(ugyfel);
+
+            _dbContext.SaveChanges();
         }
 
-        Ugyfel IUgyfelService.Get(Guid ID)
+        public void Delete(Guid ID)
         {
-            return _ugyfelek.FirstOrDefault(x => x.Ugyfelszam == ID);
+            var ugyfel = Get(ID);
+            
+            _dbContext.Ugyfelek.Remove(ugyfel);
+
+            _dbContext.SaveChanges();
+        }
+
+        public Ugyfel Get(Guid ID)
+        {
+            return _dbContext.Ugyfelek.Find(ID);
         }
 
         List<Ugyfel> IUgyfelService.GetAll()
         {
-            return _ugyfelek;
+            return _dbContext.Ugyfelek.ToList();
         }
 
         void IUgyfelService.Update(Ugyfel ugyfel)
         {
-            int index =  _ugyfelek.FindIndex(x => x.Ugyfelszam == ugyfel.Ugyfelszam);
-            _ugyfelek[index] = ugyfel;
+            var updatedUgyfel = Get(ugyfel.Ugyfelszam);
+
+            updatedUgyfel.Nev = ugyfel.Nev;
+            updatedUgyfel.Lakcim = ugyfel.Lakcim;
+            updatedUgyfel.Email = ugyfel.Email;
+
+            _dbContext.SaveChanges();
         }
     }
 }
