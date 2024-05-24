@@ -1,7 +1,9 @@
 
 using Autoszerelo.Database;
 using Autoszerelo.Services;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace Autoszerelo
 {
@@ -22,6 +24,7 @@ namespace Autoszerelo
             {
                 string conncetion = builder.Configuration.GetConnectionString("AutoszereloDbConnection");
                 options.UseMySql(conncetion, ServerVersion.AutoDetect(conncetion));
+                
             }, ServiceLifetime.Singleton);
 
             builder.Services.AddSingleton<IUgyfelService, UgyfelService>();

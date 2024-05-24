@@ -4,7 +4,9 @@ namespace Autoszerelo.DataClasses
 {
     public class Munka
     {
+        [Key]
         public Guid MunkaAzonosito { get; private set; }
+
         public Guid UgyfelSzam {  get; private set; }
         [RegularExpression("^[A-Z]{3}-[0-9]{3}$")]
         public string Rendszam { get; private set; }
