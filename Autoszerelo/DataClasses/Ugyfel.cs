@@ -9,9 +9,17 @@ namespace Autoszerelo.DataClasses
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Ugyfelszam {  get; set; }
+        [RegularExpression("^[A-Za-z]+[A-Za-z]*", ErrorMessage = "A nevnek csak kis, es nagybetuket szabad tartalmaznia!"),
+            MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
+            MaxLength(50, ErrorMessage = "Legfeljebb 50 karakter megadasa engedelyezett!")]
         public string Nev {  get; set; }
+        [RegularExpression("[^\\s-]+"),
+            MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
+            MaxLength(100, ErrorMessage = "Legfeljebb 100 karakter megadasa engedelyezett!")]
         public string Lakcim { get; set; }
-        [EmailAddress]
+        [EmailAddress,
+            MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
+            MaxLength(100, ErrorMessage = "Legfeljebb 100 karakter megadasa engedelyezett!")]
         public string Email { get; set; }
         
 
