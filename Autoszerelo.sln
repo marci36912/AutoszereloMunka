@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autoszerelo", "Autoszerelo\Autoszerelo.csproj", "{053C60B0-61FD-4DD3-AD6D-50F9422A1430}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autoszerelo", "Autoszerelo\Autoszerelo.csproj", "{053C60B0-61FD-4DD3-AD6D-50F9422A1430}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoszereloUnitTests", "AutoszereloUnitTests\AutoszereloUnitTests.csproj", "{BE784C39-CD36-4905-95F2-3C8A7144DD46}"
+	ProjectSection(ProjectDependencies) = postProject
+		{053C60B0-61FD-4DD3-AD6D-50F9422A1430} = {053C60B0-61FD-4DD3-AD6D-50F9422A1430}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{053C60B0-61FD-4DD3-AD6D-50F9422A1430}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{053C60B0-61FD-4DD3-AD6D-50F9422A1430}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{053C60B0-61FD-4DD3-AD6D-50F9422A1430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE784C39-CD36-4905-95F2-3C8A7144DD46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE784C39-CD36-4905-95F2-3C8A7144DD46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE784C39-CD36-4905-95F2-3C8A7144DD46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE784C39-CD36-4905-95F2-3C8A7144DD46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
