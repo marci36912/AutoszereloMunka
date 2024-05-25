@@ -1,5 +1,6 @@
 ﻿using Autoszerelo.Database;
 using Autoszerelo.DataClasses;
+using Microsoft.EntityFrameworkCore;
 
 namespace Autoszerelo.Services
 {
@@ -14,69 +15,69 @@ namespace Autoszerelo.Services
             _logger = logger;
         }
 
-        public void Add(Munka munka)
+        public async Task Add(Munka munka)
         {
-            _dbContext.Munkak.Add(munka);
+            await _dbContext.Munkak.AddAsync(munka);
 
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             _logger.LogInformation($"New job ({munka.MunkaKategoria.ToString()}) recorded as {munka.MunkaAzonosito} for {munka.UgyfelSzam} - {munka.Rendszam}");
         }
 
-        public void Delete(Guid ID)
+        public async Task Delete(Guid ID)
         {
             var munka = Get(ID);
-            _dbContext.Munkak.Remove(munka);
+            _dbContext.Munkak.Remove(munka.Result);
 
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             _logger.LogInformation($"Job deleted from the database: {ID}");
         }
 
-        public Munka Get(Guid ID)
+        public async Task<Munka> Get(Guid ID)
         {
-            var munka = _dbContext.Munkak.FirstOrDefault(x => x.MunkaAzonosito == ID);
+            var munka = await _dbContext.Munkak.FirstOrDefaultAsync(x => x.MunkaAzonosito == ID);
 
             _logger.LogInformation("Job querried from the database");
             return munka;
         }
 
-        public List<Munka> GetAll()
+        public async Task<List<Munka>> GetAll()
         {
             _logger.LogInformation("All jobs querried from the database");
-            return _dbContext.Munkak.ToList();
+            return await _dbContext.Munkak.ToListAsync();
         }
 
-        public void Update(Munka munka)
+        public async Task Update(Munka munka)
         {
             var updatedMunka = Get(munka.MunkaAzonosito);
 
-            if (updatedMunka != null)
+            if (updatedMunka.Result != null)
             {
-                updatedMunka.UgyfelSzam = munka.UgyfelSzam;
-                updatedMunka.Rendszam = munka.Rendszam;
-                updatedMunka.GyartasiEv = munka.GyartasiEv;
-                updatedMunka.MunkaKategoria = munka.MunkaKategoria;
-                updatedMunka.HibaRovidLeirasa = munka.HibaRovidLeirasa;
-                updatedMunka.HibaSulyossaga = munka.HibaSulyossaga;
+                updatedMunka.Result.UgyfelSzam = munka.UgyfelSzam;
+                updatedMunka.Result.Rendszam = munka.Rendszam;
+                updatedMunka.Result.GyartasiEv = munka.GyartasiEv;
+                updatedMunka.Result.MunkaKategoria = munka.MunkaKategoria;
+                updatedMunka.Result.HibaRovidLeirasa = munka.HibaRovidLeirasa;
+                updatedMunka.Result.HibaSulyossaga = munka.HibaSulyossaga;
 
-                _dbContext.SaveChanges();
-                _logger.LogInformation($"Jobs information updated ({updatedMunka.MunkaAzonosito})");
+                await _dbContext.SaveChangesAsync();
+                _logger.LogInformation($"Jobs information updated ({updatedMunka.Result.MunkaAzonosito})");
             }
         }
 
-        public void NextWorkingState(Guid ID)
+        public async Task NextWorkingState(Guid ID)
         {
             var munka = Get(ID);
 
-            if(munka.MunkaAllapot == MunkaAllapot.Befejezett)
+            if(munka.Result.MunkaAllapot == MunkaAllapot.Befejezett)
             {
                 return;
             }
 
-            munka.MunkaAllapot =  munka.MunkaAllapot + 1;
+            munka.Result.MunkaAllapot =  munka.Result.MunkaAllapot + 1;
 
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             _logger.LogInformation($"Jobs status updated ({ID})");
         }

@@ -13,9 +13,9 @@ namespace Autoszerelo.Services
             _logger = logger;
         }
 
-        public void Add(Ugyfel ugyfel)
+        public async Task Add(Ugyfel ugyfel)
         {
-            _dbContext.Ugyfelek.Add(ugyfel);
+            await _dbContext.Ugyfelek.AddAsync(ugyfel);
 
             _dbContext.SaveChanges();
 

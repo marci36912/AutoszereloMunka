@@ -4,10 +4,10 @@ namespace Autoszerelo.Services
 {
     public interface IUgyfelService
     {
-        public void Add(Ugyfel ugyfel);
-        public Ugyfel Get(Guid ID);
-        public List<Ugyfel> GetAll();
-        public void Update(Ugyfel ugyfel);
-        public void Delete(Guid ID);
+        public Task Add(Ugyfel ugyfel);
+        public Task<Ugyfel> Get(Guid ID);
+        public Task<List<Ugyfel>> GetAll();
+        public Task Update(Ugyfel ugyfel);
+        public Task Delete(Guid ID);
     }
 }

@@ -4,11 +4,11 @@ namespace Autoszerelo.Services
 {
     public interface IMunkaService
     {
-        public void Add(Munka munka);
-        public Munka Get(Guid ID);
-        public List<Munka> GetAll();
-        public void Update(Munka munka);
-        public void Delete(Guid ID);
-        public void NextWorkingState(Guid ID);
+        public Task Add(Munka munka);
+        public Task<Munka> Get(Guid ID);
+        public Task<List<Munka>> GetAll();
+        public Task Update(Munka munka);
+        public Task Delete(Guid ID);
+        public Task NextWorkingState(Guid ID);
     }
 }
