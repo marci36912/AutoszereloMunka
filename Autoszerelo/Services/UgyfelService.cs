@@ -27,12 +27,16 @@ namespace Autoszerelo.Services
         public async Task Delete(Guid ID)
         {
             var ugyfel = Get(ID);
-            
-            _dbContext.Ugyfelek.Remove(ugyfel.Result);
 
-            await _dbContext.SaveChangesAsync();
+            if (ugyfel.Result != null)
+            {
 
-            _logger.LogInformation($"{ugyfel.Result.Nev} deleted from the database");
+                _dbContext.Ugyfelek.Remove(ugyfel.Result);
+
+                await _dbContext.SaveChangesAsync();
+
+                _logger.LogInformation($"{ugyfel.Result.Nev} deleted from the database");
+            }
         }
 
         public async Task<Ugyfel> Get(Guid ID)
@@ -44,7 +48,7 @@ namespace Autoszerelo.Services
         public async Task<List<Ugyfel>> GetAll()
         {
             _logger.LogInformation($"All costumers querried from database");
-            return await _dbContext.Ugyfelek.ToListAsync();
+            return _dbContext.Ugyfelek.ToList();
         }
 
         public async Task Update(Ugyfel ugyfel)
