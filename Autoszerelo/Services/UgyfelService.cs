@@ -1,5 +1,6 @@
 ﻿using Autoszerelo.Database;
 using Autoszerelo.DataClasses;
+using Microsoft.EntityFrameworkCore;
 
 namespace Autoszerelo.Services
 {
@@ -17,47 +18,47 @@ namespace Autoszerelo.Services
         {
             await _dbContext.Ugyfelek.AddAsync(ugyfel);
 
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             _logger.LogInformation($"New costumer recorded: {ugyfel.Nev}");
         }
 
-        public void Delete(Guid ID)
+        public async Task Delete(Guid ID)
         {
             var ugyfel = Get(ID);
             
-            _dbContext.Ugyfelek.Remove(ugyfel);
+            _dbContext.Ugyfelek.Remove(ugyfel.Result);
 
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
-            _logger.LogInformation($"{ugyfel.Nev} deleted from the database");
+            _logger.LogInformation($"{ugyfel.Result.Nev} deleted from the database");
         }
 
-        public Ugyfel Get(Guid ID)
+        public async Task<Ugyfel> Get(Guid ID)
         {
             _logger.LogInformation($"Costumer querried from database");
-            return _dbContext.Ugyfelek.Find(ID);
+            return await _dbContext.Ugyfelek.FirstOrDefaultAsync(x => x.Ugyfelszam == ID);
         }
 
-        List<Ugyfel> IUgyfelService.GetAll()
+        public async Task<List<Ugyfel>> GetAll()
         {
             _logger.LogInformation($"All costumers querried from database");
-            return _dbContext.Ugyfelek.ToList();
+            return await _dbContext.Ugyfelek.ToListAsync();
         }
 
-        void IUgyfelService.Update(Ugyfel ugyfel)
+        public async Task Update(Ugyfel ugyfel)
         {
             var updatedUgyfel = Get(ugyfel.Ugyfelszam);
 
-            if (updatedUgyfel != null)
+            if (updatedUgyfel.Result != null)
             {
-                updatedUgyfel.Nev = ugyfel.Nev;
-                updatedUgyfel.Lakcim = ugyfel.Lakcim;
-                updatedUgyfel.Email = ugyfel.Email;
+                updatedUgyfel.Result.Nev = ugyfel.Nev;
+                updatedUgyfel.Result.Lakcim = ugyfel.Lakcim;
+                updatedUgyfel.Result.Email = ugyfel.Email;
 
-                _dbContext.SaveChanges();
+                await _dbContext.SaveChangesAsync();
 
-                _logger.LogInformation($"{updatedUgyfel.Nev} costumers informations updated");
+                _logger.LogInformation($"{updatedUgyfel.Result.Nev} costumers informations updated");
             }
         }
     }
