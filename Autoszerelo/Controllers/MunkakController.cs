@@ -1,5 +1,5 @@
 ﻿using Autoszerelo.DataClasses;
-using Autoszerelo.Services;
+using Autoszerelo.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.CodeAnalysis;
 

@@ -1,5 +1,6 @@
 ﻿using Autoszerelo.Database;
 using Autoszerelo.DataClasses;
+using Autoszerelo.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Autoszerelo.Services

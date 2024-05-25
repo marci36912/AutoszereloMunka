@@ -1,6 +1,6 @@
 ﻿using Autoszerelo.DataClasses;
 
-namespace Autoszerelo.Services
+namespace Autoszerelo.Services.Interfaces
 {
     public interface IMunkaService
     {

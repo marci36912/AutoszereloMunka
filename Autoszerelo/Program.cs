@@ -1,6 +1,7 @@
 
 using Autoszerelo.Database;
 using Autoszerelo.Services;
+using Autoszerelo.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
