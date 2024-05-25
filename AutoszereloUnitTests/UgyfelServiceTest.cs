@@ -2,23 +2,10 @@
 using Autoszerelo.DataClasses;
 using Autoszerelo.Services;
 using Autoszerelo.Services.Interfaces;
-using Castle.Core.Logging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using MockQueryable.EntityFrameworkCore;
 using MockQueryable.Moq;
 using Moq;
-using Moq.EntityFrameworkCore;
-using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using TestingDemo;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AutoszereloUnitTests
 {
