@@ -64,7 +64,7 @@ namespace AutoszereloUnitTests
 
             var result = await ugyfelService.Get(Guid.NewGuid());
 
-            Assert.Equal(null, result);
+            Assert.Null(result);
         }
 
         [Fact]

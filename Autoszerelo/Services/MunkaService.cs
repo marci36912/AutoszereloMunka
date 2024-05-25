@@ -46,7 +46,7 @@ namespace Autoszerelo.Services
         public async Task<List<Munka>> GetAll()
         {
             _logger.LogInformation("All jobs querried from the database");
-            return await _dbContext.Munkak.ToListAsync();
+            return _dbContext.Munkak.ToList();
         }
 
         public async Task Update(Munka munka)
