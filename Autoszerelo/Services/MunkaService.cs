@@ -6,10 +6,12 @@ namespace Autoszerelo.Services
     public class MunkaService : IMunkaService
     {
         private readonly AutoszereloDbContext _dbContext;
+        private readonly ILogger<Munka> _logger;
 
-        public MunkaService(AutoszereloDbContext dbContext)
+        public MunkaService(AutoszereloDbContext dbContext, ILogger<Munka> logger)
         {
             _dbContext = dbContext;
+            _logger = logger;
         }
 
         public void Add(Munka munka)
@@ -17,6 +19,8 @@ namespace Autoszerelo.Services
             _dbContext.Munkak.Add(munka);
 
             _dbContext.SaveChanges();
+
+            _logger.LogInformation($"New job ({munka.MunkaKategoria.ToString()}) recorded as {munka.MunkaAzonosito} for {munka.UgyfelSzam} - {munka.Rendszam}");
         }
 
         public void Delete(Guid ID)
@@ -25,15 +29,21 @@ namespace Autoszerelo.Services
             _dbContext.Munkak.Remove(munka);
 
             _dbContext.SaveChanges();
+
+            _logger.LogInformation($"Job deleted from the database: {ID}");
         }
 
         public Munka Get(Guid ID)
         {
-            return _dbContext.Munkak.Find(ID);
+            var munka = _dbContext.Munkak.FirstOrDefault(x => x.MunkaAzonosito == ID);
+
+            _logger.LogInformation("Job querried from the database");
+            return munka;
         }
 
         public List<Munka> GetAll()
         {
+            _logger.LogInformation("All jobs querried from the database");
             return _dbContext.Munkak.ToList();
         }
 
@@ -41,15 +51,34 @@ namespace Autoszerelo.Services
         {
             var updatedMunka = Get(munka.MunkaAzonosito);
 
-            updatedMunka.UgyfelSzam = munka.UgyfelSzam;
-            updatedMunka.Rendszam = munka.Rendszam;
-            updatedMunka.GyartasiEv = munka.GyartasiEv;
-            updatedMunka.MunkaKategoria = munka.MunkaKategoria;
-            updatedMunka.HibaRovidLeirasa = munka.HibaRovidLeirasa;
-            updatedMunka.HibaSulyossaga = munka.HibaSulyossaga;
-            updatedMunka.MunkaAllapot = munka.MunkaAllapot;
+            if (updatedMunka != null)
+            {
+                updatedMunka.UgyfelSzam = munka.UgyfelSzam;
+                updatedMunka.Rendszam = munka.Rendszam;
+                updatedMunka.GyartasiEv = munka.GyartasiEv;
+                updatedMunka.MunkaKategoria = munka.MunkaKategoria;
+                updatedMunka.HibaRovidLeirasa = munka.HibaRovidLeirasa;
+                updatedMunka.HibaSulyossaga = munka.HibaSulyossaga;
+
+                _dbContext.SaveChanges();
+                _logger.LogInformation($"Jobs information updated ({updatedMunka.MunkaAzonosito})");
+            }
+        }
+
+        public void NextWorkingState(Guid ID)
+        {
+            var munka = Get(ID);
+
+            if(munka.MunkaAllapot == MunkaAllapot.Befejezett)
+            {
+                return;
+            }
+
+            munka.MunkaAllapot =  munka.MunkaAllapot + 1;
 
             _dbContext.SaveChanges();
+
+            _logger.LogInformation($"Jobs status updated ({ID})");
         }
     }
 }

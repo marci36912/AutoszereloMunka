@@ -2,6 +2,7 @@
 using Autoszerelo.Database;
 using Autoszerelo.Services;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 
 namespace Autoszerelo
@@ -11,6 +12,13 @@ namespace Autoszerelo
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddSerilog(
+                    config =>
+                        config
+                            .MinimumLevel.Information()
+                            .WriteTo.Console()
+                            .WriteTo.File("log.txt"));
 
             // Add services to the container.
 

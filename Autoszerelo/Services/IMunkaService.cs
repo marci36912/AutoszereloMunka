@@ -9,5 +9,6 @@ namespace Autoszerelo.Services
         public List<Munka> GetAll();
         public void Update(Munka munka);
         public void Delete(Guid ID);
+        public void NextWorkingState(Guid ID);
     }
 }
