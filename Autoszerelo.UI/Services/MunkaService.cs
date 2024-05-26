@@ -1,38 +1,46 @@
 ﻿using Autoszerelo.DataClasses;
 using Autoszerelo.UI.Services.Interfaces;
+using System;
+using System.Net.Http.Json;
 
-namespace Autoszerelo.Services
+namespace Autoszerelo.UI.Services
 {
     public class MunkaService : IMunkaService
     {
-        public Task Add(Munka munka)
+        private readonly HttpClient _httpClient;
+        public MunkaService(HttpClient httpClient)
         {
-            throw new NotImplementedException();
+            _httpClient = httpClient;
+        }
+        public async Task Add(Munka munka)
+        {
+            await _httpClient.PutAsJsonAsync("/Munkak", munka);
         }
 
-        public Task Delete(Guid ID)
+        public async Task Delete(Guid ID)
         {
-            throw new NotImplementedException();
+            await _httpClient.DeleteAsync($"/Munkak/{ID}");
         }
 
-        public Task<Munka> Get(Guid ID)
+        public async Task<Munka> Get(Guid ID)
         {
-            throw new NotImplementedException();
+            return await _httpClient.GetFromJsonAsync<Munka>($"/Munkak/{ID}");
         }
 
-        public Task<List<Munka>> GetAll()
+        public async Task<IEnumerable<Munka>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _httpClient.GetFromJsonAsync<IEnumerable<Munka>>("/Munkak");
         }
 
-        public Task NextWorkingState(Guid ID)
+        public async Task NextWorkingState(Guid ID)
         {
-            throw new NotImplementedException();
+            //TODO SAJAT UTVONAL
         }
 
-        public Task Update(Munka munka)
+        public async Task Update(Munka munka)
         {
-            throw new NotImplementedException();
+            var id = munka.MunkaAzonosito;
+            await _httpClient.PutAsJsonAsync($"/Munkak/{id}", munka);
         }
     }
 }

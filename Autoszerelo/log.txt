@@ -95,3 +95,17 @@ FROM `Ugyfelek` AS `u`
 2024-05-26 06:57:03.162 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.6666ms
 2024-05-26 06:57:03.212 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - null null
 2024-05-26 06:57:03.316 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 104.6098ms
+2024-05-26 07:11:00.733 +02:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-05-26 07:11:00.821 +02:00 [INF] Now listening on: https://localhost:7101
+2024-05-26 07:11:00.823 +02:00 [INF] Now listening on: http://localhost:5192
+2024-05-26 07:11:00.824 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-26 07:11:00.825 +02:00 [INF] Hosting environment: Development
+2024-05-26 07:11:00.825 +02:00 [INF] Content root path: C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo
+2024-05-26 07:11:01.471 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/index.html - null null
+2024-05-26 07:11:01.633 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/index.html - 200 null text/html;charset=utf-8 165.1766ms
+2024-05-26 07:11:01.657 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-26 07:11:01.662 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 5.4899ms
+2024-05-26 07:11:01.668 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/_vs/browserLink - null null
+2024-05-26 07:11:01.701 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.9895ms
+2024-05-26 07:11:01.750 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - null null
+2024-05-26 07:11:01.870 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 120.143ms
