@@ -7,7 +7,14 @@
 <h3 class="text-center my-2">Munka adatai</h3>
 @if (Job is null)
 {
-    <p>Loading..</p>
+    @if(hasNotLoaded)
+    {
+        <p>Betoltes alatt...</p>
+    }
+    else
+    {
+        <p>Nincs megjelenitheto munka.</p>
+    }
 }
 else
 {
@@ -73,11 +80,13 @@ else
     public Guid ID { get; set; }
     private Munka? Job { get; set; }
     private MunkaoraKalkulator munkaora;
+    private bool hasNotLoaded = true;
 
     protected override async Task OnInitializedAsync()
     {
         Job = await MunkaService.Get(ID);
         munkaora = new MunkaoraKalkulator(Job);
+        hasNotLoaded = false;
     }
 
     private async Task DeleteAsync()

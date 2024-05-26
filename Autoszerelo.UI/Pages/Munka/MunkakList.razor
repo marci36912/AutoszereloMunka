@@ -6,7 +6,14 @@
 
 @if (Jobs is null)
 {
-    <p>Loading..</p>
+    @if (hasNotLoaded)
+    {
+        <p>Betoltes alatt...</p>
+    }
+    else
+    {
+        <p>Nincs megjelenitheto munka.</p>
+    }
 }
 else
 {
@@ -47,10 +54,12 @@ else
 @code {
     private int index = 0;
     private IEnumerable<Munka>? Jobs { get; set; }
+    private bool hasNotLoaded = true;
 
     protected override async Task OnInitializedAsync()
     {
         Jobs = await MunkaService.GetAll();
+        hasNotLoaded = false;
     }
 
 }

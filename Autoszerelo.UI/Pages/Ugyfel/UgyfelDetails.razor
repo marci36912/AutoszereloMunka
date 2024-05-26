@@ -7,7 +7,14 @@
 <h3 class="text-center my-2">Ugyfel adatai</h3>
 @if (Costumer is null)
 {
-    <p>Loading..</p>
+    @if (hasNotLoaded)
+    {
+        <p>Betoltes alatt...</p>
+    }
+    else
+    {
+        <p>Nincs megjelenitheto ugyfel.</p>
+    }
 }
 else
 {
@@ -76,10 +83,12 @@ else
     [Parameter]
     public Guid ID { get; set; }
     private Ugyfel? Costumer { get; set; }
+    private bool hasNotLoaded = true;
 
     protected override async Task OnInitializedAsync()
     {
         Costumer = await UgyfelService.Get(ID);
+        hasNotLoaded = false;
     }
 
     private async Task DeleteAsync()

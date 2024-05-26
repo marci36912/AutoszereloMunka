@@ -6,7 +6,14 @@
 
 @if (Costumers is null)
 {
-    <p>Loading..</p>
+    @if (hasNotLoaded)
+    {
+        <p>Betoltes alatt...</p>
+    }
+    else
+    {
+        <p>Nincs megjelenitheto ugyfel.</p>
+    }
 }
 else
 {
@@ -39,10 +46,12 @@ else
 @code {
     private int index = 0;
     private IEnumerable<Ugyfel>? Costumers { get; set; }
+    private bool hasNotLoaded = true;
 
     protected override async Task OnInitializedAsync()
     {
         Costumers = await UgyfelService.GetAll();
+        hasNotLoaded = false;
     }
 
 }

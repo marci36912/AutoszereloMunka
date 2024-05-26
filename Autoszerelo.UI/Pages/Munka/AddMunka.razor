@@ -6,9 +6,9 @@
 @inject NavigationManager NavigationManager
 
 <h3 class="text-center my-2">Uj munka felvetele</h3>
-@if(ugyfelek == null)
+@if(ugyfelek == null || empty)
 {
-    <p>nincs megjelenitheto ugyfel</p>
+    <p>Nincs megjelenitheto ugyfel, akihez munkat lehetne rendelni.</p>
 }
 else
 {
@@ -55,7 +55,7 @@ else
             <ValidationMessage For="() => Job.GyartasiEv" />
         </div>
 
-        <button class="btn btn-primary mb-3" type="submit">Adatok modositasa</button>
+        <button class="btn btn-primary mb-3" type="submit">Adatok rogzitese</button>
     </EditForm>
 }
 
@@ -68,11 +68,20 @@ else
 
     private List<Ugyfel> ugyfelek = new List<Ugyfel>();
 
+    private bool empty = false;
+
     protected override async Task OnInitializedAsync()
     {
         ugyfelek = (await UgyfelService.GetAll()).ToList<Ugyfel>();
-        ugyfelek = ugyfelek.OrderBy(x => x.Nev).ToList();
-        Job.UgyfelSzam = ugyfelek[0].Ugyfelszam;
+        if(ugyfelek.Count == 0 || ugyfelek == null)
+        {
+            empty = true;
+        }
+        else
+        {
+            ugyfelek = ugyfelek.OrderBy(x => x.Nev).ToList();
+            Job.UgyfelSzam = ugyfelek[0].Ugyfelszam;
+        }
     }
 
     private async Task AddJob()
