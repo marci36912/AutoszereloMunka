@@ -8809,3 +8809,376 @@ FROM `Ugyfelek` AS `u`
 2024-05-26 22:00:25.056 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
 2024-05-26 22:00:25.056 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 1.8776ms
 2024-05-26 22:07:33.309 +02:00 [INF] Application is shutting down...
+2024-05-26 22:08:53.440 +02:00 [INF] User profile is available. Using 'C:\Users\facsiga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-26 22:08:53.509 +02:00 [INF] Now listening on: https://localhost:7101
+2024-05-26 22:08:53.509 +02:00 [INF] Now listening on: http://localhost:5192
+2024-05-26 22:08:53.510 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-26 22:08:53.510 +02:00 [INF] Hosting environment: Development
+2024-05-26 22:08:53.511 +02:00 [INF] Content root path: C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo
+2024-05-26 22:22:02.096 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:22:02.110 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:22:02.122 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:22:02.135 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:22:02.321 +02:00 [INF] All costumers querried from database
+2024-05-26 22:22:02.839 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:22:02.879 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:22:03.016 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`UgyfelSzam` = @__get_Item_0
+2024-05-26 22:22:03.045 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`UgyfelSzam` = @__get_Item_0
+2024-05-26 22:22:03.046 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`UgyfelSzam` = @__get_Item_0
+2024-05-26 22:22:03.051 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 913.5685ms
+2024-05-26 22:22:03.051 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:22:03.052 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 958.1998ms
+2024-05-26 22:22:04.848 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 22:22:04.849 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:22:04.849 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:22:04.851 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:22:04.852 +02:00 [INF] All jobs querried from the database
+2024-05-26 22:22:04.857 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 22:22:04.857 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:22:04.858 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 7.4803ms
+2024-05-26 22:22:04.858 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:22:04.859 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2993 application/json; charset=utf-8 11.0759ms
+2024-05-26 22:22:05.732 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:22:05.733 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:22:05.734 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:22:05.734 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:22:05.734 +02:00 [INF] All costumers querried from database
+2024-05-26 22:22:05.735 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:22:05.736 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:22:05.736 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 2.0824ms
+2024-05-26 22:22:05.736 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:22:05.736 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 3.8333ms
+2024-05-26 22:24:45.317 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:24:45.318 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:24:45.318 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:24:45.318 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:24:45.318 +02:00 [INF] All costumers querried from database
+2024-05-26 22:24:45.319 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:24:45.320 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:24:45.320 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.9227ms
+2024-05-26 22:24:45.320 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:24:45.320 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 3.1191ms
+2024-05-26 22:24:49.444 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 22:24:49.444 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:24:49.444 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:24:49.444 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:24:49.445 +02:00 [INF] All jobs querried from the database
+2024-05-26 22:24:49.446 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 22:24:49.446 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:24:49.447 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 2.1589ms
+2024-05-26 22:24:49.447 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:24:49.447 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2993 application/json; charset=utf-8 2.825ms
+2024-05-26 22:24:50.771 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:24:50.771 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:24:50.771 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:24:50.771 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:24:50.771 +02:00 [INF] All costumers querried from database
+2024-05-26 22:24:50.772 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:24:50.772 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:24:50.773 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.2281ms
+2024-05-26 22:24:50.773 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:24:50.773 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 1.9074ms
+2024-05-26 22:24:51.444 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 22:24:51.444 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:24:51.445 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:24:51.445 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:24:51.445 +02:00 [INF] All jobs querried from the database
+2024-05-26 22:24:51.446 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 22:24:51.446 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:24:51.446 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.2946ms
+2024-05-26 22:24:51.446 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:24:51.446 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2993 application/json; charset=utf-8 1.8796ms
+2024-05-26 22:24:52.470 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak/08dc7d8d-725a-4aae-8597-641ffff81164 - null null
+2024-05-26 22:24:52.471 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:24:52.471 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-26 22:24:52.475 +02:00 [INF] Route matched with {action = "Get", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Munka] Get(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:24:52.504 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-26 22:24:52.509 +02:00 [INF] Job querried from the database
+2024-05-26 22:24:52.509 +02:00 [INF] Executing OkObjectResult, writing value of type 'Castle.Proxies.MunkaProxy'.
+2024-05-26 22:24:52.509 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Get (Autoszerelo) in 33.9034ms
+2024-05-26 22:24:52.509 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-26 22:24:52.509 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak/08dc7d8d-725a-4aae-8597-641ffff81164 - 200 687 application/json; charset=utf-8 39.0329ms
+2024-05-26 22:24:54.315 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7d84-9f20-42a6-82fc-e06bbb24bc95 - null null
+2024-05-26 22:24:54.315 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:24:54.315 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-26 22:24:54.317 +02:00 [INF] Route matched with {action = "Get", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Ugyfel] Get(System.Guid) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:24:54.318 +02:00 [INF] Costumer querried from database
+2024-05-26 22:24:54.325 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-26 22:24:54.326 +02:00 [INF] Executing OkObjectResult, writing value of type 'Castle.Proxies.UgyfelProxy'.
+2024-05-26 22:24:54.326 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo) in 9.207ms
+2024-05-26 22:24:54.326 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-26 22:24:54.326 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7d84-9f20-42a6-82fc-e06bbb24bc95 - 200 676 application/json; charset=utf-8 11.5059ms
+2024-05-26 22:31:20.542 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:31:20.542 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:31:20.542 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:20.542 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:31:20.543 +02:00 [INF] All costumers querried from database
+2024-05-26 22:31:20.568 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:31:20.568 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:31:20.568 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 25.695ms
+2024-05-26 22:31:20.568 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:20.568 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 26.3474ms
+2024-05-26 22:31:22.823 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 22:31:22.823 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:31:22.823 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:31:22.823 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:31:22.823 +02:00 [INF] All jobs querried from the database
+2024-05-26 22:31:22.825 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 22:31:22.825 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:31:22.825 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 2.4658ms
+2024-05-26 22:31:22.825 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:31:22.826 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2993 application/json; charset=utf-8 3.1245ms
+2024-05-26 22:31:27.013 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:31:27.013 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:31:27.013 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:27.013 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:31:27.013 +02:00 [INF] All costumers querried from database
+2024-05-26 22:31:27.014 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:31:27.014 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:31:27.015 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.1299ms
+2024-05-26 22:31:27.015 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:27.015 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 1.6851ms
+2024-05-26 22:31:35.448 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:31:35.448 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:31:35.449 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:35.449 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:31:35.449 +02:00 [INF] All costumers querried from database
+2024-05-26 22:31:35.449 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:31:35.450 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:31:35.450 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.1484ms
+2024-05-26 22:31:35.450 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:35.450 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 1.7133ms
+2024-05-26 22:31:38.133 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:31:38.133 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:31:38.133 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:38.133 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:31:38.134 +02:00 [INF] All costumers querried from database
+2024-05-26 22:31:38.134 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:31:38.135 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:31:38.135 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.348ms
+2024-05-26 22:31:38.135 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:38.135 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 1.9185ms
+2024-05-26 22:31:39.869 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 22:31:39.869 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:31:39.869 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:31:39.869 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:31:39.869 +02:00 [INF] All jobs querried from the database
+2024-05-26 22:31:39.870 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 22:31:39.870 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:31:39.871 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.2037ms
+2024-05-26 22:31:39.871 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:31:39.871 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2993 application/json; charset=utf-8 1.8653ms
+2024-05-26 22:31:40.805 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:31:40.805 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:31:40.805 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:40.805 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:31:40.805 +02:00 [INF] All costumers querried from database
+2024-05-26 22:31:40.806 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:31:40.806 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:31:40.806 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.1682ms
+2024-05-26 22:31:40.806 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:31:40.807 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 1.9447ms
+2024-05-26 22:31:42.161 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 22:31:42.161 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:31:42.161 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:31:42.161 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:31:42.161 +02:00 [INF] All jobs querried from the database
+2024-05-26 22:31:42.162 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 22:31:42.162 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:31:42.163 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.3164ms
+2024-05-26 22:31:42.163 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:31:42.163 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2993 application/json; charset=utf-8 2.212ms
+2024-05-26 22:32:10.654 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:32:10.654 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:32:10.654 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:32:10.654 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:32:10.654 +02:00 [INF] All costumers querried from database
+2024-05-26 22:32:10.655 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:32:10.655 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:32:10.656 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.2057ms
+2024-05-26 22:32:10.656 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:32:10.656 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 1.721ms
+2024-05-26 22:37:56.211 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:37:56.211 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:37:56.211 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:37:56.211 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:37:56.211 +02:00 [INF] All costumers querried from database
+2024-05-26 22:37:56.223 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:37:56.223 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:37:56.223 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 11.9458ms
+2024-05-26 22:37:56.223 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:37:56.224 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 12.6702ms
+2024-05-26 22:37:58.621 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 22:37:58.621 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:37:58.621 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:37:58.621 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:37:58.621 +02:00 [INF] All jobs querried from the database
+2024-05-26 22:37:58.625 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 22:37:58.625 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:37:58.626 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 4.482ms
+2024-05-26 22:37:58.626 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:37:58.626 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2993 application/json; charset=utf-8 5.0926ms
+2024-05-26 22:37:59.325 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:37:59.325 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:37:59.326 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:37:59.326 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:37:59.326 +02:00 [INF] All costumers querried from database
+2024-05-26 22:37:59.326 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:37:59.326 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:37:59.327 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 0.9737ms
+2024-05-26 22:37:59.327 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:37:59.327 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 1.5045ms
+2024-05-26 22:38:00.061 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 22:38:00.061 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:38:00.061 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:38:00.061 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:38:00.061 +02:00 [INF] All jobs querried from the database
+2024-05-26 22:38:00.062 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 22:38:00.063 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:38:00.063 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.7739ms
+2024-05-26 22:38:00.063 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:38:00.063 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2993 application/json; charset=utf-8 2.3287ms
+2024-05-26 22:38:01.103 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak/08dc7d8d-725a-4aae-8597-641ffff81164 - null null
+2024-05-26 22:38:01.103 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:38:01.103 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-26 22:38:01.103 +02:00 [INF] Route matched with {action = "Get", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Munka] Get(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:38:01.105 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-26 22:38:01.105 +02:00 [INF] Job querried from the database
+2024-05-26 22:38:01.105 +02:00 [INF] Executing OkObjectResult, writing value of type 'Castle.Proxies.MunkaProxy'.
+2024-05-26 22:38:01.105 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Get (Autoszerelo) in 1.8407ms
+2024-05-26 22:38:01.105 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-26 22:38:01.105 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak/08dc7d8d-725a-4aae-8597-641ffff81164 - 200 687 application/json; charset=utf-8 2.4049ms
+2024-05-26 22:38:03.187 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak/08dc7d8d-725a-4aae-8597-641ffff81164 - null null
+2024-05-26 22:38:03.187 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:38:03.187 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-26 22:38:03.188 +02:00 [INF] Route matched with {action = "Get", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Munka] Get(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:38:03.189 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-26 22:38:03.189 +02:00 [INF] Job querried from the database
+2024-05-26 22:38:03.189 +02:00 [INF] Executing OkObjectResult, writing value of type 'Castle.Proxies.MunkaProxy'.
+2024-05-26 22:38:03.189 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Get (Autoszerelo) in 1.4161ms
+2024-05-26 22:38:03.189 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-26 22:38:03.189 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak/08dc7d8d-725a-4aae-8597-641ffff81164 - 200 687 application/json; charset=utf-8 2.0219ms
+2024-05-26 22:38:04.281 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak/08dc7d8d-725a-4aae-8597-641ffff81164 - null null
+2024-05-26 22:38:04.281 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:38:04.281 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-26 22:38:04.281 +02:00 [INF] Route matched with {action = "Get", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Munka] Get(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:38:04.282 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-26 22:38:04.282 +02:00 [INF] Job querried from the database
+2024-05-26 22:38:04.282 +02:00 [INF] Executing OkObjectResult, writing value of type 'Castle.Proxies.MunkaProxy'.
+2024-05-26 22:38:04.282 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Get (Autoszerelo) in 1.3178ms
+2024-05-26 22:38:04.282 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-26 22:38:04.282 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak/08dc7d8d-725a-4aae-8597-641ffff81164 - 200 687 application/json; charset=utf-8 1.7626ms
+2024-05-26 22:38:07.453 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7101/Munkak/next/08dc7d8d-725a-4aae-8597-641ffff81164 - application/json; charset=utf-8 38
+2024-05-26 22:38:07.454 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:38:07.454 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.UpdateMunkaallapot (Autoszerelo)'
+2024-05-26 22:38:07.457 +02:00 [INF] Route matched with {action = "UpdateMunkaallapot", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateMunkaallapot(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:38:07.458 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-26 22:38:07.459 +02:00 [INF] Job querried from the database
+2024-05-26 22:38:07.460 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-26 22:38:07.460 +02:00 [INF] Job querried from the database
+2024-05-26 22:38:07.461 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-26 22:38:07.462 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.UpdateMunkaallapot (Autoszerelo) in 5.0034ms
+2024-05-26 22:38:07.462 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.UpdateMunkaallapot (Autoszerelo)'
+2024-05-26 22:38:07.462 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7101/Munkak/next/08dc7d8d-725a-4aae-8597-641ffff81164 - 200 0 null 9.3767ms
+2024-05-26 22:38:07.486 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 22:38:07.486 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:38:07.486 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:38:07.486 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 22:38:07.486 +02:00 [INF] All jobs querried from the database
+2024-05-26 22:38:07.487 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 22:38:07.487 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:38:07.487 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 0.9543ms
+2024-05-26 22:38:07.487 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 22:38:07.487 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2993 application/json; charset=utf-8 1.4164ms
+2024-05-26 22:38:15.522 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 22:38:15.523 +02:00 [INF] CORS policy execution successful.
+2024-05-26 22:38:15.523 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:38:15.523 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 22:38:15.523 +02:00 [INF] All costumers querried from database
+2024-05-26 22:38:15.524 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 22:38:15.524 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:38:15.524 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.2643ms
+2024-05-26 22:38:15.524 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 22:38:15.524 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1657 application/json; charset=utf-8 2.0005ms
+2024-05-26 22:38:32.947 +02:00 [INF] Application is shutting down...
