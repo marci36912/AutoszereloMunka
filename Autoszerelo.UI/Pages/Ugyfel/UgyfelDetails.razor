@@ -1,0 +1,86 @@
+﻿@page "/ugyfel/{Ugyfelszam:guid}"
+@using Autoszerelo.DataClasses
+@using Autoszerelo.UI.Services
+@inject Autoszerelo.UI.Services.Interfaces.IUgyfelService UgyfelService
+@inject NavigationManager NavigationManager
+
+<h3 class="text-center my-2">Ugyfel adatai</h3>
+@if (Costumer is null)
+{
+    <p>Loading..</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nev</th>
+                <th>Email</th>
+                <th>Lakcim</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>@Costumer.Nev</td>
+                    <td>@Costumer.Email</td>
+                    <td>@Costumer.Lakcim</td>
+                    <td><a href="ugyfel/update/@Costumer.Ugyfelszam" class="btn btn-primary">Adatok modositasa</a></td>
+                    <td>
+                        <button class="btn btn-warning text-end" @onclick="DeleteAsync">Ugyfel torlese</button>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    @if(Costumer.Munkak is null || Costumer.Munkak.Count == 0)
+    {
+        <h2 class="my-2 text-center">Nem tartozik az ugyfelhez rogzitett javitas.</h2>
+    }
+    else
+    {
+        <h2 class="my-2 text-center">Az ugyfelhez tartozo munkak</h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Munka kategoria</th>
+                    <th scope="col">Hiba sulyossaga</th>
+                    <th scope="col">Hiba leirasa</th>
+                    <th scope="col">Jarmu rendszama</th>
+                    <th scope="col">Jarmu gyartasi eve</th>
+                    <th scope="col">Munka allapota</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var munka in Costumer.Munkak)
+            {
+                <tr>
+                    <td>@munka.MunkaKategoria.ToString()</td>
+                    <td>@munka.HibaSulyossaga</td>
+                    <td>@munka.HibaRovidLeirasa</td>
+                    <td>@munka.Rendszam</td>
+                    <td>@munka.GyartasiEv</td>
+                    <td>@munka.MunkaAllapot.ToString()</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+}
+
+@code {
+    [Parameter]
+    public Guid Ugyfelszam { get; set; }
+    private Ugyfel? Costumer { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Costumer = await UgyfelService.Get(Ugyfelszam);
+    }
+
+    private async Task DeleteAsync()
+    {
+        await UgyfelService.Delete(Costumer.Ugyfelszam);
+        NavigationManager.NavigateTo("/ugyfelek");
+    }
+}

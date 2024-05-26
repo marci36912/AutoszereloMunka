@@ -17,8 +17,6 @@ namespace Autoszerelo.Controllers
             _ugyfelService = ugyfelService;
         }
 
-        [EnableCors("AllowLocalhost")]
-        [HttpOptions]
         [HttpPost]
         public IActionResult Add([FromBody] Ugyfel ugyfel)
         {

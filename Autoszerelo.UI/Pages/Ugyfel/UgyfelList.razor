@@ -1,8 +1,8 @@
-﻿@page "/ugyfelek/list"
+﻿@page "/ugyfelek"
 @using Autoszerelo.DataClasses
 @using Autoszerelo.UI.Services
 @inject Autoszerelo.UI.Services.Interfaces.IUgyfelService UgyfelService
-<h3>PersonList</h3>
+<h3 class="text-center my-2">Regisztralt ugyfelek listaja</h3>
 
 @if (Costumers is null)
 {
@@ -10,21 +10,26 @@
 }
 else
 {
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Birth date</th>
-                <th>Email</th>
+                <th scope="col"></th>
+                <th scope="col">Nev</th>
+                <th scope="col">Lakcim</th>
+                <th scope="col">Email</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var costumer in Costumers)
             {
+                index++;
                 <tr>
+                    <td scope="row">@index</td>
                     <td>@costumer.Nev</td>
                     <td>@costumer.Lakcim</td>
                     <td>@costumer.Email</td>
+                    <td class="text-end"><a href="/ugyfel/@costumer.Ugyfelszam" class="btn btn-primary">Reszletek</a></td>
                 </tr>
             }
         </tbody>
@@ -32,6 +37,7 @@ else
 }
 
 @code {
+    private int index = 0;
     private IEnumerable<Ugyfel>? Costumers { get; set; }
 
     protected override async Task OnInitializedAsync()

@@ -15,4 +15,8 @@
     <ProjectReference Include="..\SharedDataClasses\SharedDataClasses.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Munka\" />
+  </ItemGroup>
+
 </Project>
