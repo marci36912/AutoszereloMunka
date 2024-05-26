@@ -1,0 +1,97 @@
+2024-05-26 06:37:26.210 +02:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-05-26 06:37:26.314 +02:00 [INF] Now listening on: https://localhost:7101
+2024-05-26 06:37:26.315 +02:00 [INF] Now listening on: http://localhost:5192
+2024-05-26 06:37:26.316 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-26 06:37:26.317 +02:00 [INF] Hosting environment: Development
+2024-05-26 06:37:26.317 +02:00 [INF] Content root path: C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo
+2024-05-26 06:37:27.395 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger - null null
+2024-05-26 06:37:27.395 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/index.html - null null
+2024-05-26 06:37:27.557 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger - 499 null null 168.4692ms
+2024-05-26 06:37:27.614 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/index.html - 200 null text/html;charset=utf-8 225.907ms
+2024-05-26 06:37:27.668 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-26 06:37:27.671 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/_vs/browserLink - null null
+2024-05-26 06:37:27.674 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 6.2897ms
+2024-05-26 06:37:27.711 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.5055ms
+2024-05-26 06:37:27.806 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - null null
+2024-05-26 06:37:27.922 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 115.862ms
+2024-05-26 06:37:37.930 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 06:37:37.936 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 06:37:37.951 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 06:52:53.735 +02:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-05-26 06:52:53.818 +02:00 [INF] Now listening on: https://localhost:7101
+2024-05-26 06:52:53.819 +02:00 [INF] Now listening on: http://localhost:5192
+2024-05-26 06:52:53.821 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-26 06:52:53.821 +02:00 [INF] Hosting environment: Development
+2024-05-26 06:52:53.822 +02:00 [INF] Content root path: C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo
+2024-05-26 06:52:54.557 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/index.html - null null
+2024-05-26 06:52:54.776 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/index.html - 200 null text/html;charset=utf-8 223.439ms
+2024-05-26 06:52:54.799 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-26 06:52:54.800 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/_vs/browserLink - null null
+2024-05-26 06:52:54.808 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 9.7233ms
+2024-05-26 06:52:54.830 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.6724ms
+2024-05-26 06:52:54.895 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/favicon-16x16.png - null null
+2024-05-26 06:52:54.905 +02:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2024-05-26 06:52:54.906 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/favicon-16x16.png - 499 665 image/png 11.278ms
+2024-05-26 06:52:54.922 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - null null
+2024-05-26 06:52:55.035 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 113.222ms
+2024-05-26 06:52:59.835 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-26 06:52:59.840 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 06:52:59.853 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-26 06:53:00.319 +02:00 [INF] All jobs querried from the database
+2024-05-26 06:53:01.135 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-26 06:53:01.230 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-05-26 06:53:01.253 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1396.1353ms
+2024-05-26 06:53:01.253 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-26 06:53:01.254 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 null application/json; charset=utf-8 1419.4895ms
+2024-05-26 06:54:39.959 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek - null null
+2024-05-26 06:54:39.961 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 06:54:39.963 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 06:54:39.965 +02:00 [INF] All costumers querried from database
+2024-05-26 06:54:39.981 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 06:54:39.983 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-05-26 06:54:39.986 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 22.0906ms
+2024-05-26 06:54:39.990 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 06:54:39.992 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek - 200 null application/json; charset=utf-8 33.2533ms
+2024-05-26 06:54:44.140 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek - null null
+2024-05-26 06:54:44.141 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 06:54:44.142 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 06:54:44.143 +02:00 [INF] All costumers querried from database
+2024-05-26 06:54:44.145 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 06:54:44.146 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-05-26 06:54:44.147 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 3.9251ms
+2024-05-26 06:54:44.148 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 06:54:44.149 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek - 200 null application/json; charset=utf-8 9.1426ms
+2024-05-26 06:55:11.124 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7101/Ugyfelek - application/json 78
+2024-05-26 06:55:11.126 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo)'
+2024-05-26 06:55:11.130 +02:00 [INF] Route matched with {action = "Add", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(Autoszerelo.DataClasses.Ugyfel) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 06:55:11.195 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-05-26 06:55:11.204 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo) in 72.2352ms
+2024-05-26 06:55:11.208 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo)'
+2024-05-26 06:55:11.209 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7101/Ugyfelek - 400 null application/problem+json; charset=utf-8 84.8983ms
+2024-05-26 06:55:15.379 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7101/Ugyfelek - application/json 78
+2024-05-26 06:55:15.381 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo)'
+2024-05-26 06:55:15.381 +02:00 [INF] Route matched with {action = "Add", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(Autoszerelo.DataClasses.Ugyfel) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 06:55:15.384 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-05-26 06:55:15.385 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo) in 2.3303ms
+2024-05-26 06:55:15.386 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo)'
+2024-05-26 06:55:15.387 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7101/Ugyfelek - 400 null application/problem+json; charset=utf-8 7.5168ms
+2024-05-26 06:57:02.408 +02:00 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+2024-05-26 06:57:02.453 +02:00 [INF] Now listening on: https://localhost:7101
+2024-05-26 06:57:02.455 +02:00 [INF] Now listening on: http://localhost:5192
+2024-05-26 06:57:02.456 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-26 06:57:02.457 +02:00 [INF] Hosting environment: Development
+2024-05-26 06:57:02.457 +02:00 [INF] Content root path: C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo
+2024-05-26 06:57:02.961 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/index.html - null null
+2024-05-26 06:57:03.094 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/index.html - 200 null text/html;charset=utf-8 135.6508ms
+2024-05-26 06:57:03.129 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-26 06:57:03.131 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/_vs/browserLink - null null
+2024-05-26 06:57:03.139 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 10.2566ms
+2024-05-26 06:57:03.162 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.6666ms
+2024-05-26 06:57:03.212 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - null null
+2024-05-26 06:57:03.316 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 104.6098ms
