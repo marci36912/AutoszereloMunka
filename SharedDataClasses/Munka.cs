@@ -22,9 +22,9 @@ namespace Autoszerelo.DataClasses
         [Range(1,10)]
         public int HibaSulyossaga { get; set; }
         public MunkaAllapot MunkaAllapot { get; set; } = MunkaAllapot.Felvett;
-     
+
 
         //Navigation
-        public virtual Ugyfel Ugyfelek {  get; set; } = null!;
+        public virtual Ugyfel Ugyfelek { get; set; } = null!;
     }
 }

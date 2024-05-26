@@ -1,4 +1,5 @@
 ﻿using Autoszerelo.DataClasses;
+using Castle.Core.Resource;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata;
 
@@ -18,5 +19,11 @@ namespace Autoszerelo.Database
 
         public virtual DbSet<Ugyfel> Ugyfelek { get; set;}
         public virtual DbSet<Munka> Munkak { get; set;}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Ugyfel>()
+                .HasMany(e => e.Munkak)
+                .WithOne(e => e.Ugyfelek);
+        }
     }
 }

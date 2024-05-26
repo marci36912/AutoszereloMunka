@@ -1,0 +1,71 @@
+﻿@page "/ugyfelek/{Ugyfelszam:guid}"
+@using Autoszerelo.DataClasses
+@using Autoszerelo.UI.Services
+@inject Autoszerelo.UI.Services.Interfaces.IUgyfelService UgyfelService
+<h3>PersonList</h3>
+
+@if (Costumer is null)
+{
+    <p>Loading..</p>
+}
+else
+{
+    <table class="ugyfel">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birth date</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>@Costumer.Nev</td>
+                    <td>@Costumer.Lakcim</td>
+                    <td>@Costumer.Email</td>
+                </tr>
+        </tbody>
+    </table>
+    @if(Costumer.Munkak is null || Costumer.Munkak.Count == 0)
+    {
+        <p>Nincs megjelenitheto munka.</p>
+    }
+    else
+    {
+        <table class="munka">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Birth date</th>
+                    <th>Email</th>
+                    <th>Birth date</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Costumer.Munkak)
+                {
+                    <tr>
+                        <td>@x.MunkaKategoria.ToString()</td>
+                        <td>@x.HibaSulyossaga</td>
+                        <td>@x.GyartasiEv</td>
+                        <td>@x.HibaRovidLeirasa</td>
+                        <td>@x.MunkaAllapot</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+@code {
+    [Parameter]
+    public Guid Ugyfelszam { get; set; }
+    private Ugyfel? Costumer { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Costumer = await UgyfelService.Get(Ugyfelszam);
+    }
+
+}

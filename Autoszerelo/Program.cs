@@ -37,6 +37,14 @@ namespace Autoszerelo
                 options.UseLazyLoadingProxies();
             }, ServiceLifetime.Singleton);
 
+            builder.Services.AddControllers(options =>
+            options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+
+            builder.Services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
             builder.Services.AddSingleton<IUgyfelService, UgyfelService>();
             builder.Services.AddSingleton<IMunkaService, MunkaService>();
 
