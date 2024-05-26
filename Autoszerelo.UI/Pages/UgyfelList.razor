@@ -1,0 +1,42 @@
+﻿@page "/ugyfelek/list"
+@using Autoszerelo.DataClasses
+@using Autoszerelo.UI.Services
+@inject Autoszerelo.UI.Services.Interfaces.IUgyfelService UgyfelService
+<h3>PersonList</h3>
+
+@if (Costumers is null)
+{
+    <p>Loading..</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Birth date</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var costumer in Costumers)
+            {
+                <tr>
+                    <td>@costumer.Nev</td>
+                    <td>@costumer.Lakcim</td>
+                    <td>@costumer.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Ugyfel>? Costumers { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Costumers = await UgyfelService.GetAll();
+    }
+
+}

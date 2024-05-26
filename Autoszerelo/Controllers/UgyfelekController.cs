@@ -19,7 +19,7 @@ namespace Autoszerelo.Controllers
         [HttpPost]
         public IActionResult Add([FromBody] Ugyfel ugyfel)
         {
-            var existingUgyfel = _ugyfelService.Get(ugyfel.Ugyfelszam);
+            var existingUgyfel = _ugyfelService.Get(ugyfel.Ugyfelszam).Result;
 
             if (existingUgyfel is not null)
             {
@@ -33,7 +33,7 @@ namespace Autoszerelo.Controllers
         [HttpGet("{ID:guid}")]
         public ActionResult<Ugyfel> Get(Guid ID)
         {
-            var ugyfel = _ugyfelService.Get(ID);
+            var ugyfel = _ugyfelService.Get(ID).Result;
 
             if (ugyfel is null)
             {
@@ -43,10 +43,10 @@ namespace Autoszerelo.Controllers
             return Ok(ugyfel);
         }
 
-        [HttpGet]
+        [HttpGet("list")]
         public ActionResult<List<Ugyfel>> GetAll()
         {
-            return Ok(_ugyfelService.GetAll());
+            return Ok(_ugyfelService.GetAll().Result);
         }
 
         [HttpPut("{ID:guid}")]
@@ -57,7 +57,7 @@ namespace Autoszerelo.Controllers
                 return BadRequest();
             }
 
-            var existingUgyfel = _ugyfelService.Get(ID);
+            var existingUgyfel = _ugyfelService.Get(ID).Result;
 
             if (existingUgyfel is null)
             {
@@ -71,7 +71,7 @@ namespace Autoszerelo.Controllers
         [HttpDelete("{ID:guid}")]
         public IActionResult Delete(Guid ID)
         {
-            var ugyfel = _ugyfelService.Get(ID);
+            var ugyfel = _ugyfelService.Get(ID).Result;
 
             if (ugyfel is null)
             {

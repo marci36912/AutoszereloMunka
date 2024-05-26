@@ -14,6 +14,8 @@ namespace Autoszerelo
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddCors();
+
             builder.Services.AddSerilog(
                     config =>
                         config
@@ -46,6 +48,9 @@ namespace Autoszerelo
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors(
+                x => x.AllowAnyOrigin().AllowAnyMethod());
 
             app.UseHttpsRedirection();
 

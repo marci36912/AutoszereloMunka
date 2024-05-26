@@ -6,7 +6,7 @@ namespace Autoszerelo.UI.Services.Interfaces
     {
         public Task Add(Munka munka);
         public Task<Munka> Get(Guid ID);
-        public Task<List<Munka>> GetAll();
+        public Task<IEnumerable<Munka>> GetAll();
         public Task Update(Munka munka);
         public Task Delete(Guid ID);
         public Task NextWorkingState(Guid ID);

@@ -19,7 +19,7 @@ namespace Autoszerelo.Controllers
         [HttpPost]
         public IActionResult Add([FromBody] Munka munka)
         {
-            var existingMunka = _munkaService.Get(munka.MunkaAzonosito);
+            var existingMunka = _munkaService.Get(munka.MunkaAzonosito).Result;
 
             if (existingMunka is not null)
             {
@@ -35,18 +35,18 @@ namespace Autoszerelo.Controllers
         {
             var munka = _munkaService.Get(ID);
 
-            if (munka is null)
+            if (munka.Result is null)
             {
                 return NotFound();
             }
 
-            return Ok(munka);
+            return Ok(munka.Result);
         }
 
         [HttpGet]
         public ActionResult<List<Munka>> GetAll()
         {
-            return Ok(_munkaService.GetAll());
+            return Ok(_munkaService.GetAll().Result);
         }
 
         [HttpPut("{ID:guid}")]
@@ -57,7 +57,7 @@ namespace Autoszerelo.Controllers
                 return BadRequest();
             }
 
-            var existingMunka = _munkaService.Get(ID);
+            var existingMunka = _munkaService.Get(ID).Result;
 
             if (existingMunka is null)
             {
@@ -73,7 +73,7 @@ namespace Autoszerelo.Controllers
         {
             var munka = _munkaService.Get(ID);
 
-            if (munka is null)
+            if (munka.Result is null)
             {
                 return NotFound();
             }

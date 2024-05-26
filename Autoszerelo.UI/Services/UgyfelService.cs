@@ -2,6 +2,8 @@
 using Autoszerelo.UI.Services.Interfaces;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace Autoszerelo.UI.Services
 {
@@ -29,13 +31,18 @@ namespace Autoszerelo.UI.Services
 
         public async Task<IEnumerable<Ugyfel>> GetAll()
         {
-            return await _httpClient.GetFromJsonAsync<IEnumerable<Ugyfel>>("/Munkak");
+            var options = new JsonSerializerOptions()
+            {
+                ReferenceHandler = ReferenceHandler.Preserve,
+                PropertyNameCaseInsensitive = true
+            };
+            return await _httpClient.GetFromJsonAsync<IEnumerable<Ugyfel>>("/Ugyfelek/list", options);
         }
 
         public async Task Update(Ugyfel ugyfel)
         {
             var id = ugyfel.Ugyfelszam;
-            await _httpClient.PutAsJsonAsync($"/Munkak/{id}", ugyfel);
+            await _httpClient.PutAsJsonAsync($"/Ugyfelek/{id}", ugyfel);
         }
     }
 }
