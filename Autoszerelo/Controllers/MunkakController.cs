@@ -81,5 +81,19 @@ namespace Autoszerelo.Controllers
             _munkaService.Delete(ID);
             return Ok();
         }
+
+        [HttpPut("next/{ID:guid}")]
+        public IActionResult UpdateMunkaallapot(Guid ID)
+        {
+            var existingMunka = _munkaService.Get(ID).Result;
+
+            if (existingMunka is null)
+            {
+                return NotFound();
+            }
+
+            _munkaService.NextWorkingState(ID);
+            return Ok();
+        }
     }
 }

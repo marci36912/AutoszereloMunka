@@ -34,7 +34,7 @@ namespace Autoszerelo.UI.Services
 
         public async Task NextWorkingState(Guid ID)
         {
-            //TODO SAJAT UTVONAL
+            await _httpClient.PutAsJsonAsync($"/Munkak/next/{ID}", ID);
         }
 
         public async Task Update(Munka munka)

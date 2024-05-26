@@ -24,6 +24,7 @@ else
                 <th scope="col">Munkaora esztimacio</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -36,6 +37,9 @@ else
                 <td>@Job.MunkaAllapot</td>
                 <td>@munkaora.GetCalculatedMunkaora() ora</td>
                 <td><a href="/munka/update/@Job.MunkaAzonosito" class="btn btn-primary">Adatok modositasa</a></td>
+                <td>
+                        <button class="btn btn-primary text-end" @onclick="NextAllapot">Allapot frissitese</button>
+                </td>
                 <td>
                     <button class="btn btn-warning text-end" @onclick="DeleteAsync">Munka torlese</button>
                 </td>
@@ -79,6 +83,12 @@ else
     private async Task DeleteAsync()
     {
         await MunkaService.Delete(Job.MunkaAzonosito);
+        NavigationManager.NavigateTo("/munkak");
+    }
+
+    private async Task NextAllapot()
+    {
+        await MunkaService.NextWorkingState(Job.MunkaAzonosito);
         NavigationManager.NavigateTo("/munkak");
     }
 }
