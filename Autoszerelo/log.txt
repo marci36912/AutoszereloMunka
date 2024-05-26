@@ -8170,3 +8170,41 @@ LIMIT 1
 2024-05-26 20:49:39.569 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
 2024-05-26 20:49:39.569 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak/08dc7d8d-725a-4aae-8597-641ffff81164 - 200 754 application/json; charset=utf-8 1.6293ms
 2024-05-26 20:50:16.462 +02:00 [INF] Application is shutting down...
+2024-05-26 21:15:40.609 +02:00 [INF] User profile is available. Using 'C:\Users\facsiga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-26 21:15:40.676 +02:00 [INF] Now listening on: https://localhost:7101
+2024-05-26 21:15:40.676 +02:00 [INF] Now listening on: http://localhost:5192
+2024-05-26 21:15:40.677 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-26 21:15:40.678 +02:00 [INF] Hosting environment: Development
+2024-05-26 21:15:40.678 +02:00 [INF] Content root path: C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo
+2024-05-26 21:16:39.790 +02:00 [INF] Application is shutting down...
+2024-05-26 21:41:22.399 +02:00 [INF] User profile is available. Using 'C:\Users\facsiga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-26 21:41:22.467 +02:00 [INF] Now listening on: https://localhost:7101
+2024-05-26 21:41:22.467 +02:00 [INF] Now listening on: http://localhost:5192
+2024-05-26 21:41:22.468 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-26 21:41:22.468 +02:00 [INF] Hosting environment: Development
+2024-05-26 21:41:22.468 +02:00 [INF] Content root path: C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo
+2024-05-26 21:41:33.890 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-26 21:41:33.903 +02:00 [INF] CORS policy execution successful.
+2024-05-26 21:41:33.914 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 21:41:33.925 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-26 21:41:34.168 +02:00 [INF] All costumers querried from database
+2024-05-26 21:41:34.681 +02:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-26 21:41:34.721 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:41:34.859 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`UgyfelSzam` = @__get_Item_0
+2024-05-26 21:41:34.888 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`UgyfelSzam` = @__get_Item_0
+2024-05-26 21:41:34.890 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`UgyfelSzam` = @__get_Item_0
+2024-05-26 21:41:34.894 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 966.8722ms
+2024-05-26 21:41:34.894 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-26 21:41:34.895 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1719 application/json; charset=utf-8 1007.4814ms
+2024-05-26 21:44:15.950 +02:00 [INF] Application is shutting down...
