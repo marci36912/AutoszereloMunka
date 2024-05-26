@@ -249,6 +249,7 @@ namespace AutoszereloUnitTests
             Assert.NotEqual(originalMunkaAllapot, updatedMunkaAllapot.MunkaAllapot);
         }
 
+        [Fact]
         public async Task NextWorkingState_BefejezettJob_DoesntGetsUpdated()
         {
             var ID = Guid.NewGuid();

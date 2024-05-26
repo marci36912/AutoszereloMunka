@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Autoszerelo\Autoszerelo.csproj" />
+    <ProjectReference Include="..\SharedDataClasses\SharedDataClasses.csproj" />
   </ItemGroup>
 
   <ItemGroup>
