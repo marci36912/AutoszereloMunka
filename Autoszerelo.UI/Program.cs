@@ -13,7 +13,7 @@ namespace Autoszerelo.UI
             builder.RootComponents.Add<App>("#app");
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:8080") });
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5192") });
             builder.Services.AddScoped<IUgyfelService, UgyfelService>();
             builder.Services.AddScoped<IMunkaService, MunkaService>();
 
