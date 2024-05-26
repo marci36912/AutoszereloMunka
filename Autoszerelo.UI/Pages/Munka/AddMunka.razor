@@ -1,0 +1,83 @@
+﻿@page "/munka/add"
+@using Autoszerelo.UI.Services.Interfaces
+@using Autoszerelo.DataClasses
+@inject IMunkaService MunkaService
+@inject IUgyfelService UgyfelService
+@inject NavigationManager NavigationManager
+
+<h3 class="text-center my-2">Uj munka felvetele</h3>
+@if(ugyfelek == null)
+{
+    <p>nincs megjelenitheto ugyfel</p>
+}
+else
+{
+    <EditForm Model="Job" OnValidSubmit="() => AddJob()">
+        <DataAnnotationsValidator />
+        <div class="form-group mb-3">
+            <label class="form-label">Ugyfel</label>
+            <InputSelect @bind-Value="@Job.UgyfelSzam" class="form-control">
+                @foreach (var ugyfel in ugyfelek)
+                {
+                    <option value="@ugyfel.Ugyfelszam">@ugyfel.Nev</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="() => Job.UgyfelSzam" />
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label">Kategoria</label>
+            <InputSelect @bind-Value="@Job.MunkaKategoria" class="form-control">
+                @foreach (var kategoria in Enum.GetNames(typeof(MunkaKategoria)))
+                {
+                    <option value="@Enum.Parse(typeof(MunkaKategoria),kategoria)">@kategoria</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="() => Job.MunkaKategoria" />
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label">Hiba sulyossaga</label>
+            <InputNumber @bind-Value="@Job.HibaSulyossaga" class="form-control" />
+            <ValidationMessage For="() => Job.HibaSulyossaga" />
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label">Hiba leirasa</label>
+            <InputText @bind-Value="@Job.HibaRovidLeirasa" class="form-control" />
+            <ValidationMessage For="() => Job.HibaRovidLeirasa" />
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label">Jarmu rendszama</label>
+            <InputText @bind-Value="@Job.Rendszam" class="form-control" />
+            <ValidationMessage For="() => Job.Rendszam" />
+        </div>
+        <div class="form-group mb-3">
+            <label class="form-label">Jarmu gyartasi eve</label>
+            <InputDate @bind-Value="@Job.GyartasiEv" class="form-control" />
+            <ValidationMessage For="() => Job.GyartasiEv" />
+        </div>
+
+        <button class="btn btn-primary mb-3" type="submit">Adatok modositasa</button>
+    </EditForm>
+}
+
+@code {
+    private Munka Job { get; set; } = new()
+    {
+        GyartasiEv = new DateOnly(2000,01,01),
+        HibaSulyossaga = 1,
+    };
+
+    private List<Ugyfel> ugyfelek = new List<Ugyfel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        ugyfelek = (await UgyfelService.GetAll()).ToList<Ugyfel>();
+        ugyfelek = ugyfelek.OrderBy(x => x.Nev).ToList();
+        Job.UgyfelSzam = ugyfelek[0].Ugyfelszam;
+    }
+
+    private async Task AddJob()
+    {
+        await MunkaService.Add(Job);
+        NavigationManager.NavigateTo("/munkak");
+    }
+}

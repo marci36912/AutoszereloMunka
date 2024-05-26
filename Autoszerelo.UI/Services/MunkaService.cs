@@ -14,7 +14,7 @@ namespace Autoszerelo.UI.Services
         }
         public async Task Add(Munka munka)
         {
-            await _httpClient.PutAsJsonAsync("/Munkak", munka);
+            await _httpClient.PostAsJsonAsync("/Munkak", munka);
         }
 
         public async Task Delete(Guid ID)

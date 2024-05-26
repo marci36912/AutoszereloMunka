@@ -1,4 +1,4 @@
-﻿@page "/ugyfel/{Ugyfelszam:guid}"
+﻿@page "/ugyfel/{ID:guid}"
 @using Autoszerelo.DataClasses
 @using Autoszerelo.UI.Services
 @inject Autoszerelo.UI.Services.Interfaces.IUgyfelService UgyfelService
@@ -39,6 +39,7 @@ else
     }
     else
     {
+        <div class="table-responsive-xl">
         <h2 class="my-2 text-center">Az ugyfelhez tartozo munkak</h2>
         <table class="table table-hover">
             <thead>
@@ -49,6 +50,7 @@ else
                     <th scope="col">Jarmu rendszama</th>
                     <th scope="col">Jarmu gyartasi eve</th>
                     <th scope="col">Munka allapota</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -61,21 +63,23 @@ else
                     <td>@munka.Rendszam</td>
                     <td>@munka.GyartasiEv</td>
                     <td>@munka.MunkaAllapot.ToString()</td>
+                    <td><a href="munka/@munka.MunkaAzonosito" class="btn btn-primary">Munka reszletei</a></td>
                 </tr>
             }
             </tbody>
         </table>
+        </div>
     }
 }
 
 @code {
     [Parameter]
-    public Guid Ugyfelszam { get; set; }
+    public Guid ID { get; set; }
     private Ugyfel? Costumer { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        Costumer = await UgyfelService.Get(Ugyfelszam);
+        Costumer = await UgyfelService.Get(ID);
     }
 
     private async Task DeleteAsync()

@@ -1,0 +1,59 @@
+﻿@page "/munka/update/{id:guid}"
+@using Autoszerelo.UI.Services.Interfaces
+@using Autoszerelo.DataClasses
+@inject IMunkaService MunkaService
+@inject NavigationManager NavigationManager
+
+<h3 class="text-center my-2">Munka modositasa</h3>
+<EditForm Model="Job" OnValidSubmit="() => UpdateJob()">
+    <DataAnnotationsValidator />
+    <div class="form-group mb-3">
+        <label class="form-label">Kategoria</label>
+        <InputSelect @bind-Value="@Job.MunkaKategoria" class="form-control">
+            @foreach(var kategoria in Enum.GetNames(typeof(MunkaKategoria)))
+            {
+                <option value="@Enum.Parse(typeof(MunkaKategoria),kategoria)">@kategoria</option>
+            }
+        </InputSelect>
+        <ValidationMessage For="() => Job.MunkaKategoria" />
+    </div>
+    <div class="form-group mb-3">
+        <label class="form-label">Hiba sulyossaga</label>
+        <InputNumber @bind-Value="@Job.HibaSulyossaga" class="form-control" />
+        <ValidationMessage For="() => Job.HibaSulyossaga" />
+    </div>
+    <div class="form-group mb-3">
+        <label class="form-label">Hiba leirasa</label>
+        <InputText @bind-Value="@Job.HibaRovidLeirasa" class="form-control" />
+        <ValidationMessage For="() => Job.HibaRovidLeirasa" />
+    </div>
+    <div class="form-group mb-3">
+        <label class="form-label">Jarmu rendszama</label>
+        <InputText @bind-Value="@Job.Rendszam" class="form-control" />
+        <ValidationMessage For="() => Job.Rendszam" />
+    </div>
+    <div class="form-group mb-3">
+        <label class="form-label">Jarmu gyartasi eve</label>
+        <InputDate @bind-Value="@Job.GyartasiEv" class="form-control" />
+        <ValidationMessage For="() => Job.GyartasiEv" />
+    </div>
+
+    <button class="btn btn-primary mb-3" type="submit">Adatok modositasa</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public Guid id { get; set; }
+    private Munka Job { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Job = await MunkaService.Get(id);
+    }
+
+    private async Task UpdateJob()
+    {
+        await MunkaService.Update(Job);
+        NavigationManager.NavigateTo("/munkak");
+    }
+}

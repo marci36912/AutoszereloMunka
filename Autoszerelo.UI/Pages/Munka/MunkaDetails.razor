@@ -1,0 +1,84 @@
+﻿@page "/munka/{ID:guid}"
+@using Autoszerelo.DataClasses
+@using Autoszerelo.UI.Services
+@inject Autoszerelo.UI.Services.Interfaces.IMunkaService MunkaService
+@inject NavigationManager NavigationManager
+
+<h3 class="text-center my-2">Munka adatai</h3>
+@if (Job is null)
+{
+    <p>Loading..</p>
+}
+else
+{
+    <div class="table-responsive-xl">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Munka kategoria</th>
+                <th scope="col">Hiba sulyossaga</th>
+                <th scope="col">Hiba leirasa</th>
+                <th scope="col">Jarmu rendszama</th>
+                <th scope="col">Jarmu gyartasi eve</th>
+                <th scope="col">Munka allapota</th>
+                <th scope="col">Munkaora esztimacio</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Job.MunkaKategoria</td>
+                <td>@Job.HibaSulyossaga</td>
+                <td>@Job.HibaRovidLeirasa</td>
+                <td>@Job.Rendszam</td>
+                <td>@Job.GyartasiEv</td>
+                <td>@Job.MunkaAllapot</td>
+                <td>@munkaora.GetCalculatedMunkaora() ora</td>
+                <td><a href="/munka/update/@Job.MunkaAzonosito" class="btn btn-primary">Adatok modositasa</a></td>
+                <td>
+                    <button class="btn btn-warning text-end" @onclick="DeleteAsync">Munka torlese</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <h3 class="text-center my-3">Megbizo adatai</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nev</th>
+                <th>Email</th>
+                <th>Lakcim</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Job.Ugyfelek.Nev</td>
+                <td>@Job.Ugyfelek.Email</td>
+                <td>@Job.Ugyfelek.Lakcim</td>
+                <td class="text-end"><a href="ugyfel/@Job.Ugyfelek.Ugyfelszam" class="btn btn-primary">Ugyfel reszletei</a></td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public Guid ID { get; set; }
+    private Munka? Job { get; set; }
+    private MunkaoraKalkulator munkaora;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Job = await MunkaService.Get(ID);
+        munkaora = new MunkaoraKalkulator(Job);
+    }
+
+    private async Task DeleteAsync()
+    {
+        await MunkaService.Delete(Job.MunkaAzonosito);
+        NavigationManager.NavigateTo("/munkak");
+    }
+}

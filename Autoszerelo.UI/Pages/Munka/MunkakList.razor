@@ -1,0 +1,56 @@
+﻿@page "/munkak"
+@using Autoszerelo.DataClasses
+@using Autoszerelo.UI.Services
+@inject Autoszerelo.UI.Services.Interfaces.IMunkaService MunkaService
+<h3 class="text-center my-2">Regisztralt munkak listaja</h3>
+
+@if (Jobs is null)
+{
+    <p>Loading..</p>
+}
+else
+{
+    <div class="table-responsive-xl">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Munka kategoria</th>
+                <th scope="col">Hiba sulyossaga</th>
+                <th scope="col">Hiba leirasa</th>
+                <th scope="col">Jarmu rendszama</th>
+                <th scope="col">Jarmu gyartasi eve</th>
+                <th scope="col">Munka allapota</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var job in Jobs)
+            {
+                index++;
+                <tr>
+                    <td scope="row">@index</td>
+                    <td>@job.MunkaKategoria</td>
+                    <td>@job.HibaSulyossaga</td>
+                    <td>@job.HibaRovidLeirasa</td>
+                    <td>@job.Rendszam</td>
+                    <td>@job.GyartasiEv</td>
+                    <td>@job.MunkaAllapot</td>
+                    <td class="text-end"><a href="/munka/@job.MunkaAzonosito" class="btn btn-primary">Reszletek</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+}
+
+@code {
+    private int index = 0;
+    private IEnumerable<Munka>? Jobs { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Jobs = await MunkaService.GetAll();
+    }
+
+}
