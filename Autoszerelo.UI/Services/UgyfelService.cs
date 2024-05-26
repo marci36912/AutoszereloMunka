@@ -1,33 +1,41 @@
 ﻿using Autoszerelo.DataClasses;
 using Autoszerelo.UI.Services.Interfaces;
+using System.Net.Http;
+using System.Net.Http.Json;
 
 namespace Autoszerelo.UI.Services
 {
     public class UgyfelService : IUgyfelService
     {
-        public Task Add(Ugyfel ugyfel)
+        private readonly HttpClient _httpClient;
+        public UgyfelService(HttpClient httpClient)
         {
-            throw new NotImplementedException();
+            _httpClient = httpClient;
+        }
+        public async Task Add(Ugyfel ugyfel)
+        {
+            await _httpClient.PutAsJsonAsync("/Ugyfelek", ugyfel);
         }
 
-        public Task Delete(Guid ID)
+        public async Task Delete(Guid ID)
         {
-            throw new NotImplementedException();
+            await _httpClient.DeleteAsync($"/Ugyfelek/{ID}");
         }
 
-        public Task<Ugyfel> Get(Guid ID)
+        public async Task<Ugyfel> Get(Guid ID)
         {
-            throw new NotImplementedException();
+            return await _httpClient.GetFromJsonAsync<Ugyfel>($"/Ugyfelek/{ID}");
         }
 
-        public Task<List<Ugyfel>> GetAll()
+        public async Task<IEnumerable<Ugyfel>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _httpClient.GetFromJsonAsync<IEnumerable<Ugyfel>>("/Munkak");
         }
 
-        public Task Update(Ugyfel ugyfel)
+        public async Task Update(Ugyfel ugyfel)
         {
-            throw new NotImplementedException();
+            var id = ugyfel.Ugyfelszam;
+            await _httpClient.PutAsJsonAsync($"/Munkak/{id}", ugyfel);
         }
     }
 }
