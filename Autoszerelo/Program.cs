@@ -14,7 +14,16 @@ namespace Autoszerelo
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddCors();
+            builder.Services.AddCors(
+                x =>
+                {
+                    x.AddPolicy("AllowLocalhost",
+                    y=> y.WithOrigins("https://localhost:7003", "http://localhost:5062", "https://localhost:7101", "http://localhost:5192")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials()
+                    .SetPreflightMaxAge(TimeSpan.FromDays(5)));
+                });
 
             builder.Services.AddSerilog(
                     config =>
@@ -50,6 +59,9 @@ namespace Autoszerelo
 
             var app = builder.Build();
 
+            app.UseRouting();
+            app.UseCors("AllowLocalhost");
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -57,13 +69,9 @@ namespace Autoszerelo
                 app.UseSwaggerUI();
             }
 
-            app.UseCors(
-                x => x.AllowAnyOrigin().AllowAnyMethod());
-
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

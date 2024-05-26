@@ -1,5 +1,6 @@
 ﻿using Autoszerelo.DataClasses;
 using Autoszerelo.Services.Interfaces;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -16,6 +17,8 @@ namespace Autoszerelo.Controllers
             _ugyfelService = ugyfelService;
         }
 
+        [EnableCors("AllowLocalhost")]
+        [HttpOptions]
         [HttpPost]
         public IActionResult Add([FromBody] Ugyfel ugyfel)
         {

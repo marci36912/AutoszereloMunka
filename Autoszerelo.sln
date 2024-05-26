@@ -10,9 +10,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoszereloUnitTests", "Aut
 		{053C60B0-61FD-4DD3-AD6D-50F9422A1430} = {053C60B0-61FD-4DD3-AD6D-50F9422A1430}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autoszerelo.UI", "Autoszerelo.UI\Autoszerelo.UI.csproj", "{112C5ABB-DBBA-41C4-A0C5-4B6498CDA9D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autoszerelo.UI", "Autoszerelo.UI\Autoszerelo.UI.csproj", "{112C5ABB-DBBA-41C4-A0C5-4B6498CDA9D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedDataClasses", "SharedDataClasses\SharedDataClasses.csproj", "{ED7CFEA5-8E58-4D56-AA73-6A4AC324D051}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedDataClasses", "SharedDataClasses\SharedDataClasses.csproj", "{ED7CFEA5-8E58-4D56-AA73-6A4AC324D051}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

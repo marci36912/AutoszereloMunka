@@ -17,7 +17,7 @@ namespace Autoszerelo.UI.Services
         }
         public async Task Add(Ugyfel ugyfel)
         {
-            await _httpClient.PutAsJsonAsync("/Ugyfelek", ugyfel);
+            await _httpClient.PostAsJsonAsync("/Ugyfelek", ugyfel);
         }
 
         public async Task Delete(Guid ID)
