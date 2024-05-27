@@ -48,8 +48,15 @@ else
 
     private async Task UpdateCostumer()
     {
-        await PersonService.UpdateAsync(Costumer);
-        await JsRuntime.InvokeVoidAsync("alert", "Az ugyfel adatai sikeresen frissitesre kerultek!");
-        NavigationManager.NavigateTo("/ugyfelek");
+        var result = await PersonService.UpdateAsync(Costumer);
+        if(result == System.Net.HttpStatusCode.OK)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Az ugyfel adatai sikeresen frissitesre kerultek!");
+            NavigationManager.NavigateTo("/ugyfelek");
+        }
+        else
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Hiba tortent az ugyfel adatainak rogzitese kozben!");
+        }
     }
 }

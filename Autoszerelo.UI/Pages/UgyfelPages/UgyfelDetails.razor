@@ -108,8 +108,15 @@ else
                     await MunkaService.DeleteAsync(munka.MunkaAzonosito);
                 }
             }
-            await UgyfelService.DeleteAsync(Costumer.Ugyfelszam);
-            NavigationManager.NavigateTo("/ugyfelek");
+            var result = await UgyfelService.DeleteAsync(Costumer.Ugyfelszam);
+            if (result == System.Net.HttpStatusCode.OK)
+            {
+                NavigationManager.NavigateTo("/ugyfelek");
+            }
+            else
+            {
+                await JsRuntime.InvokeVoidAsync("alert", "Hiba tortent a ugyfel torlese kozben!");
+            }
         }
     }
 }

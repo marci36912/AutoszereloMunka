@@ -5,6 +5,7 @@ using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using Microsoft.AspNetCore.Components;
+using System.Net;
 
 namespace Autoszerelo.UI.Services
 {
@@ -15,14 +16,14 @@ namespace Autoszerelo.UI.Services
         {
             _httpClient = httpClient;
         }
-        public async Task AddAsync(Ugyfel ugyfel)
+        public async Task<HttpStatusCode> AddAsync(Ugyfel ugyfel)
         {
-            await _httpClient.PostAsJsonAsync("/Ugyfelek", ugyfel);
+            return (await _httpClient.PostAsJsonAsync("/Ugyfelek", ugyfel)).StatusCode;
         }
 
-        public async Task DeleteAsync(Guid ID)
+        public async Task<HttpStatusCode> DeleteAsync(Guid ID)
         {
-            await _httpClient.DeleteAsync($"/Ugyfelek/{ID}");
+            return (await _httpClient.DeleteAsync($"/Ugyfelek/{ID}")).StatusCode;
         }
 
         public async Task<Ugyfel> GetAsync(Guid ID)
@@ -40,10 +41,10 @@ namespace Autoszerelo.UI.Services
             return await _httpClient.GetFromJsonAsync<IEnumerable<Ugyfel>>("/Ugyfelek/list", options);
         }
 
-        public async Task UpdateAsync(Ugyfel ugyfel)
+        public async Task<HttpStatusCode> UpdateAsync(Ugyfel ugyfel)
         {
             var id = ugyfel.Ugyfelszam;
-            await _httpClient.PutAsJsonAsync($"/Ugyfelek/{id}", ugyfel);
+            return (await _httpClient.PutAsJsonAsync($"/Ugyfelek/{id}", ugyfel)).StatusCode;
         }
     }
 }

@@ -35,8 +35,15 @@
 
     private async Task AddNewCostumer()
     {
-        await UgyfelService.AddAsync(Costumer);
-        await JsRuntime.InvokeVoidAsync("alert", "Az ugyfel adatai sikeresen rogzitesre kerultek!");
-        NavigationManager.NavigateTo("/ugyfelek");
+        var result = await UgyfelService.AddAsync(Costumer);
+        if(result == System.Net.HttpStatusCode.OK)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Az ugyfel adatai sikeresen rogzitesre kerultek!");
+            NavigationManager.NavigateTo("/ugyfelek");
+        }
+        else
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Az ugyfel adatai sikeresen rogzitesre kerultek!");
+        }
     }
 }
