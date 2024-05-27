@@ -1,7 +1,35 @@
 ﻿@page "/"
+@using Autoszerelo.DataClasses;
+@using Autoszerelo.UI.Services.Interfaces;
+@using Autoszerelo.UI.Services;
+@inject IUgyfelService UgyfelService;
+@inject IMunkaService MunkaService;
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Kezdolap</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1 class="my-3 text-center">Autoszerelo muhely munka nyilvantarto</h1>
 
-Welcome to your new app.
+@if(ugyfelek is not null && munkak is not null)
+{
+    <table class="table table-bordered">
+        <tr>
+            <td>Regisztralt ugyfelek szama</td>
+            <td>Regisztralt munkak szama</td>
+        </tr>
+        <tr>
+            <td>@ugyfelek.Count</td>
+            <td>@munkak.Count</td>
+        </tr>
+    </table>
+}
+
+@code {
+    private List<Ugyfel> ugyfelek = new List<Ugyfel>();
+    private List<Munka> munkak = new List<Munka>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        ugyfelek = (await UgyfelService.GetAllAsync()).ToList<Ugyfel>();
+        munkak = (await MunkaService.GetAllAsync()).ToList<Munka>();
+    }
+}

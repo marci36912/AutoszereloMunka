@@ -15,7 +15,7 @@ namespace Autoszerelo.DataClasses
         [Range(typeof(DateOnly), "1900-01-01", "2030-01-01", ErrorMessage = "1900 es 2030 kozti datum adhato csak meg!")]
         public DateOnly GyartasiEv {  get; set; }
         public MunkaKategoria MunkaKategoria { get; set; }
-        [RegularExpression(@"^\S(.*\S)?$", ErrorMessage = "A szoveg csak betuket es szamokat tartalmazhat!"),
+        [RegularExpression(@"^\S(.*\S)?$", ErrorMessage = "A szoveg nem kezdodhet, es nem vegzodhet szokozzel!"),
             MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
             MaxLength(100, ErrorMessage = "Legfeljebb 100 karakter megadasa engedelyezett!")]
         public string HibaRovidLeirasa { get; set; } = null!;
