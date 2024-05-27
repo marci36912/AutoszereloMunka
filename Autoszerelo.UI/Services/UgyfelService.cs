@@ -15,22 +15,22 @@ namespace Autoszerelo.UI.Services
         {
             _httpClient = httpClient;
         }
-        public async Task Add(Ugyfel ugyfel)
+        public async Task AddAsync(Ugyfel ugyfel)
         {
             await _httpClient.PostAsJsonAsync("/Ugyfelek", ugyfel);
         }
 
-        public async Task Delete(Guid ID)
+        public async Task DeleteAsync(Guid ID)
         {
             await _httpClient.DeleteAsync($"/Ugyfelek/{ID}");
         }
 
-        public async Task<Ugyfel> Get(Guid ID)
+        public async Task<Ugyfel> GetAsync(Guid ID)
         {
             return await _httpClient.GetFromJsonAsync<Ugyfel>($"/Ugyfelek/{ID}");
         }
 
-        public async Task<IEnumerable<Ugyfel>> GetAll()
+        public async Task<IEnumerable<Ugyfel>> GetAllAsync()
         {
             var options = new JsonSerializerOptions()
             {
@@ -40,7 +40,7 @@ namespace Autoszerelo.UI.Services
             return await _httpClient.GetFromJsonAsync<IEnumerable<Ugyfel>>("/Ugyfelek/list", options);
         }
 
-        public async Task Update(Ugyfel ugyfel)
+        public async Task UpdateAsync(Ugyfel ugyfel)
         {
             var id = ugyfel.Ugyfelszam;
             await _httpClient.PutAsJsonAsync($"/Ugyfelek/{id}", ugyfel);

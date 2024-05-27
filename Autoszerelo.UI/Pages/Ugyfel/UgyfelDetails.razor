@@ -1,7 +1,9 @@
 ﻿@page "/ugyfel/{ID:guid}"
 @using Autoszerelo.DataClasses
 @using Autoszerelo.UI.Services
-@inject Autoszerelo.UI.Services.Interfaces.IUgyfelService UgyfelService
+@using Autoszerelo.UI.Services.Interfaces
+@inject IMunkaService MunkaService
+@inject IUgyfelService UgyfelService
 @inject NavigationManager NavigationManager
 
 <PageTitle>Ugyfel</PageTitle>
@@ -89,13 +91,17 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        Costumer = await UgyfelService.Get(ID);
+        Costumer = await UgyfelService.GetAsync(ID);
         hasNotLoaded = false;
     }
 
     private async Task DeleteAsync()
     {
-        await UgyfelService.Delete(Costumer.Ugyfelszam);
+        foreach(var munka in Costumer.Munkak)
+        {
+            await MunkaService.DeleteAsync(munka.MunkaAzonosito);
+        }
+        await UgyfelService.DeleteAsync(Costumer.Ugyfelszam);
         NavigationManager.NavigateTo("/ugyfelek");
     }
 }

@@ -15,7 +15,7 @@ namespace Autoszerelo.Services
             _logger = logger;
         }
 
-        public async Task Add(Ugyfel ugyfel)
+        public async Task AddAsync(Ugyfel ugyfel)
         {
             await _dbContext.Ugyfelek.AddAsync(ugyfel);
 
@@ -24,9 +24,9 @@ namespace Autoszerelo.Services
             _logger.LogInformation($"New costumer recorded: {ugyfel.Nev}");
         }
 
-        public async Task Delete(Guid ID)
+        public async Task DeleteAsync(Guid ID)
         {
-            var ugyfel = Get(ID);
+            var ugyfel = GetAsync(ID);
 
             if (ugyfel.Result != null)
             {
@@ -39,21 +39,21 @@ namespace Autoszerelo.Services
             }
         }
 
-        public async Task<Ugyfel> Get(Guid ID)
+        public async Task<Ugyfel> GetAsync(Guid ID)
         {
             _logger.LogInformation($"Costumer querried from database");
             return await _dbContext.Ugyfelek.FirstOrDefaultAsync(x => x.Ugyfelszam == ID);
         }
 
-        public async Task<List<Ugyfel>> GetAll()
+        public List<Ugyfel> GetAll()
         {
             _logger.LogInformation($"All costumers querried from database");
             return _dbContext.Ugyfelek.ToList();
         }
 
-        public async Task Update(Ugyfel ugyfel)
+        public async Task UpdateAsync(Ugyfel ugyfel)
         {
-            var updatedUgyfel = Get(ugyfel.Ugyfelszam);
+            var updatedUgyfel = GetAsync(ugyfel.Ugyfelszam);
 
             if (updatedUgyfel.Result != null)
             {

@@ -19,21 +19,21 @@ namespace Autoszerelo.Controllers
         [HttpPost]
         public IActionResult Add([FromBody] Munka munka)
         {
-            var existingMunka = _munkaService.Get(munka.MunkaAzonosito).Result;
+            var existingMunka = _munkaService.GetAsync(munka.MunkaAzonosito).Result;
 
             if (existingMunka is not null)
             {
                 return Conflict();
             }
 
-            _munkaService.Add(munka);
+            _munkaService.AddAsync(munka);
             return Ok();
         }
 
         [HttpGet("{ID:guid}")]
         public ActionResult<Munka> Get(Guid ID)
         {
-            var munka = _munkaService.Get(ID);
+            var munka = _munkaService.GetAsync(ID);
 
             if (munka.Result is null)
             {
@@ -46,7 +46,7 @@ namespace Autoszerelo.Controllers
         [HttpGet]
         public ActionResult<List<Munka>> GetAll()
         {
-            return Ok(_munkaService.GetAll().Result);
+            return Ok(_munkaService.GetAll());
         }
 
         [HttpPut("{ID:guid}")]
@@ -57,42 +57,42 @@ namespace Autoszerelo.Controllers
                 return BadRequest();
             }
 
-            var existingMunka = _munkaService.Get(ID).Result;
+            var existingMunka = _munkaService.GetAsync(ID).Result;
 
             if (existingMunka is null)
             {
                 return NotFound();
             }
 
-            _munkaService.Update(munka);
+            _munkaService.UpdateAsync(munka);
             return Ok();
         }
 
         [HttpDelete("{ID:guid}")]
         public IActionResult Delete(Guid ID)
         {
-            var munka = _munkaService.Get(ID);
+            var munka = _munkaService.GetAsync(ID);
 
             if (munka.Result is null)
             {
                 return NotFound();
             }
 
-            _munkaService.Delete(ID);
+            _munkaService.DeleteAsync(ID);
             return Ok();
         }
 
         [HttpPut("next/{ID:guid}")]
         public IActionResult UpdateMunkaallapot(Guid ID)
         {
-            var existingMunka = _munkaService.Get(ID).Result;
+            var existingMunka = _munkaService.GetAsync(ID).Result;
 
             if (existingMunka is null)
             {
                 return NotFound();
             }
 
-            _munkaService.NextWorkingState(ID);
+            _munkaService.NextWorkingStateAsync(ID);
             return Ok();
         }
     }

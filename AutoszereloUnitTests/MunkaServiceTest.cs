@@ -39,7 +39,7 @@ namespace AutoszereloUnitTests
 
             IMunkaService munkaService = new MunkaService(mockedDb.Object, mockedLogger.Object);
 
-            var result = await munkaService.Get(ID);
+            var result = await munkaService.GetAsync(ID);
 
             Assert.Equal(expected, result);
         }
@@ -67,7 +67,7 @@ namespace AutoszereloUnitTests
 
             IMunkaService munkaService = new MunkaService(mockedDb.Object, mockedLogger.Object);
 
-            var result = await munkaService.Get(Guid.NewGuid());
+            var result = await munkaService.GetAsync(Guid.NewGuid());
 
             Assert.Null(result);
         }
@@ -125,7 +125,7 @@ namespace AutoszereloUnitTests
             {
                 MunkaAzonosito = Guid.NewGuid()
             };
-            await munkaService.Add(newCostumer);
+            await munkaService.AddAsync(newCostumer);
 
             mockSet.Verify(x => x.AddAsync(newCostumer, CancellationToken.None), Times.Once);
         }
@@ -153,7 +153,7 @@ namespace AutoszereloUnitTests
 
             IMunkaService munkaService = new MunkaService(mockedDb.Object, mockedLogger.Object);
 
-            await munkaService.Delete(ID);
+            await munkaService.DeleteAsync(ID);
 
             mockSet.Verify(x => x.Remove(expected), Times.Once);
         }
@@ -181,7 +181,7 @@ namespace AutoszereloUnitTests
 
             IMunkaService munkaService = new MunkaService(mockedDb.Object, mockedLogger.Object);
 
-            await munkaService.Delete(Guid.NewGuid());
+            await munkaService.DeleteAsync(Guid.NewGuid());
 
             mockSet.Verify(x => x.Remove(expected), Times.Never);
         }
@@ -212,8 +212,8 @@ namespace AutoszereloUnitTests
             var updated = expected;
             updated.Rendszam = "AAA-001";
 
-            await munkaService.Update(updated);
-            var actualUpdated = await munkaService.Get(ID);
+            await munkaService.UpdateAsync(updated);
+            var actualUpdated = await munkaService.GetAsync(ID);
 
             Assert.Equal(updated, actualUpdated);
         }
@@ -243,8 +243,8 @@ namespace AutoszereloUnitTests
 
             var originalMunkaAllapot = expected.MunkaAllapot;
 
-            await munkaService.NextWorkingState(ID);
-            var updatedMunkaAllapot = await munkaService.Get(ID);
+            await munkaService.NextWorkingStateAsync(ID);
+            var updatedMunkaAllapot = await munkaService.GetAsync(ID);
 
             Assert.NotEqual(originalMunkaAllapot, updatedMunkaAllapot.MunkaAllapot);
         }
@@ -273,7 +273,7 @@ namespace AutoszereloUnitTests
 
             IMunkaService munkaService = new MunkaService(mockedDb.Object, mockedLogger.Object);
 
-            await munkaService.NextWorkingState(ID);
+            await munkaService.NextWorkingStateAsync(ID);
 
             Assert.Equal(expected.MunkaAllapot, MunkaAllapot.Befejezett);
         }

@@ -60,7 +60,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        Jobs = await MunkaService.GetAll();
+        Jobs = await MunkaService.GetAllAsync();
         hasNotLoaded = false;
     }
 

@@ -9,7 +9,7 @@ namespace Autoszerelo.DataClasses
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Ugyfelszam {  get; set; }
-        [RegularExpression("^[A-Za-z]+[A-Za-z\\s] *", ErrorMessage = "A nev nem tartalmazhat csak szokozoket!"),
+        [RegularExpression(@"^\S([A-Za-z\s]*\S)?$", ErrorMessage = "A nev nem kezdodhet, es nem vegzodhet szokozzel!"),
             MinLength(3, ErrorMessage = "Legalabb harom karakter megadasa kotelezo!"),
             MaxLength(50, ErrorMessage = "Legfeljebb 50 karakter megadasa engedelyezett!")]
         public string Nev { get; set; } = null!;

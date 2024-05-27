@@ -16,7 +16,7 @@ namespace Autoszerelo.Services
             _logger = logger;
         }
 
-        public async Task Add(Munka munka)
+        public async Task AddAsync(Munka munka)
         {
             await _dbContext.Munkak.AddAsync(munka);
 
@@ -25,9 +25,9 @@ namespace Autoszerelo.Services
             _logger.LogInformation($"New job ({munka.MunkaKategoria.ToString()}) recorded as {munka.MunkaAzonosito} for {munka.UgyfelSzam} - {munka.Rendszam}");
         }
 
-        public async Task Delete(Guid ID)
+        public async Task DeleteAsync(Guid ID)
         {
-            var munka = Get(ID);
+            var munka = GetAsync(ID);
             _dbContext.Munkak.Remove(munka.Result);
 
             await _dbContext.SaveChangesAsync();
@@ -35,7 +35,7 @@ namespace Autoszerelo.Services
             _logger.LogInformation($"Job deleted from the database: {ID}");
         }
 
-        public async Task<Munka> Get(Guid ID)
+        public async Task<Munka> GetAsync(Guid ID)
         {
             var munka = await _dbContext.Munkak.FirstOrDefaultAsync(x => x.MunkaAzonosito == ID);
 
@@ -43,15 +43,15 @@ namespace Autoszerelo.Services
             return munka;
         }
 
-        public async Task<List<Munka>> GetAll()
+        public List<Munka> GetAll()
         {
             _logger.LogInformation("All jobs querried from the database");
             return _dbContext.Munkak.ToList();
         }
 
-        public async Task Update(Munka munka)
+        public async Task UpdateAsync(Munka munka)
         {
-            var updatedMunka = Get(munka.MunkaAzonosito);
+            var updatedMunka = GetAsync(munka.MunkaAzonosito);
 
             if (updatedMunka.Result != null)
             {
@@ -67,9 +67,9 @@ namespace Autoszerelo.Services
             }
         }
 
-        public async Task NextWorkingState(Guid ID)
+        public async Task NextWorkingStateAsync(Guid ID)
         {
-            var munka = Get(ID);
+            var munka = GetAsync(ID);
 
             if(munka.Result.MunkaAllapot == MunkaAllapot.Befejezett)
             {

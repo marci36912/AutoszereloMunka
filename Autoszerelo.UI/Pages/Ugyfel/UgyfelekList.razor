@@ -1,7 +1,8 @@
 ﻿@page "/ugyfelek"
 @using Autoszerelo.DataClasses
 @using Autoszerelo.UI.Services
-@inject Autoszerelo.UI.Services.Interfaces.IUgyfelService UgyfelService
+@using Autoszerelo.UI.Services.Interfaces
+@inject IUgyfelService UgyfelService
 
 <PageTitle>Ugyfelek</PageTitle>
 
@@ -53,7 +54,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        Costumers = await UgyfelService.GetAll();
+        Costumers = await UgyfelService.GetAllAsync();
         hasNotLoaded = false;
     }
 

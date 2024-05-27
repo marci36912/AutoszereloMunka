@@ -12,32 +12,32 @@ namespace Autoszerelo.UI.Services
         {
             _httpClient = httpClient;
         }
-        public async Task Add(Munka munka)
+        public async Task AddAsync(Munka munka)
         {
             await _httpClient.PostAsJsonAsync("/Munkak", munka);
         }
 
-        public async Task Delete(Guid ID)
+        public async Task DeleteAsync(Guid ID)
         {
             await _httpClient.DeleteAsync($"/Munkak/{ID}");
         }
 
-        public async Task<Munka> Get(Guid ID)
+        public async Task<Munka> GetAsync(Guid ID)
         {
             return await _httpClient.GetFromJsonAsync<Munka>($"/Munkak/{ID}");
         }
 
-        public async Task<IEnumerable<Munka>> GetAll()
+        public async Task<IEnumerable<Munka>> GetAllAsync()
         {
             return await _httpClient.GetFromJsonAsync<IEnumerable<Munka>>("/Munkak");
         }
 
-        public async Task NextWorkingState(Guid ID)
+        public async Task NextWorkingStateAsync(Guid ID)
         {
             await _httpClient.PutAsJsonAsync($"/Munkak/next/{ID}", ID);
         }
 
-        public async Task Update(Munka munka)
+        public async Task UpdateAsync(Munka munka)
         {
             var id = munka.MunkaAzonosito;
             await _httpClient.PutAsJsonAsync($"/Munkak/{id}", munka);

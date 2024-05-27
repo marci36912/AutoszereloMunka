@@ -4,10 +4,10 @@ namespace Autoszerelo.UI.Services.Interfaces
 {
     public interface IUgyfelService
     {
-        public Task Add(Ugyfel ugyfel);
-        public Task<Ugyfel> Get(Guid ID);
-        public Task<IEnumerable<Ugyfel>> GetAll();
-        public Task Update(Ugyfel ugyfel);
-        public Task Delete(Guid ID);
+        public Task AddAsync(Ugyfel ugyfel);
+        public Task<Ugyfel> GetAsync(Guid ID);
+        public Task<IEnumerable<Ugyfel>> GetAllAsync();
+        public Task UpdateAsync(Ugyfel ugyfel);
+        public Task DeleteAsync(Guid ID);
     }
 }

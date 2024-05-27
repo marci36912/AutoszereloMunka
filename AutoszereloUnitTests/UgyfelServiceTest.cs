@@ -34,7 +34,7 @@ namespace AutoszereloUnitTests
 
             IUgyfelService ugyfelService = new UgyfelService(mockedDb.Object, mockedLogger.Object);
 
-            var result = await ugyfelService.Get(ID);
+            var result = await ugyfelService.GetAsync(ID);
 
             Assert.Equal(expected, result);
         }
@@ -62,7 +62,7 @@ namespace AutoszereloUnitTests
 
             IUgyfelService ugyfelService = new UgyfelService(mockedDb.Object, mockedLogger.Object);
 
-            var result = await ugyfelService.Get(Guid.NewGuid());
+            var result = await ugyfelService.GetAsync(Guid.NewGuid());
 
             Assert.Null(result);
         }
@@ -120,7 +120,7 @@ namespace AutoszereloUnitTests
             {
                 Ugyfelszam = Guid.NewGuid()
             };
-            await ugyfelService.Add(newCostumer);
+            await ugyfelService.AddAsync(newCostumer);
 
             mockSet.Verify(x => x.AddAsync(newCostumer, CancellationToken.None), Times.Once);
         }
@@ -148,7 +148,7 @@ namespace AutoszereloUnitTests
 
             IUgyfelService ugyfelService = new UgyfelService(mockedDb.Object, mockedLogger.Object);
 
-            await ugyfelService.Delete(ID);
+            await ugyfelService.DeleteAsync(ID);
 
             mockSet.Verify(x => x.Remove(expected), Times.Once);
         }
@@ -176,7 +176,7 @@ namespace AutoszereloUnitTests
 
             IUgyfelService ugyfelService = new UgyfelService(mockedDb.Object, mockedLogger.Object);
 
-            await ugyfelService.Delete(Guid.NewGuid());
+            await ugyfelService.DeleteAsync(Guid.NewGuid());
 
             mockSet.Verify(x => x.Remove(expected), Times.Never);
         }
@@ -207,8 +207,8 @@ namespace AutoszereloUnitTests
             var updated = expected;
             updated.Nev = "Update";
 
-            await ugyfelService.Update(updated);
-            var actualUpdated = await ugyfelService.Get(ID);
+            await ugyfelService.UpdateAsync(updated);
+            var actualUpdated = await ugyfelService.GetAsync(ID);
 
             Assert.Equal(updated, actualUpdated);
         }

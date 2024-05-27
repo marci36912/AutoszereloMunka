@@ -73,7 +73,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        ugyfelek = (await UgyfelService.GetAll()).ToList<Ugyfel>();
+        ugyfelek = (await UgyfelService.GetAllAsync()).ToList<Ugyfel>();
         if(ugyfelek.Count == 0 || ugyfelek == null)
         {
             empty = true;
@@ -87,7 +87,7 @@ else
 
     private async Task AddJob()
     {
-        await MunkaService.Add(Job);
+        await MunkaService.AddAsync(Job);
         NavigationManager.NavigateTo("/munkak");
     }
 }

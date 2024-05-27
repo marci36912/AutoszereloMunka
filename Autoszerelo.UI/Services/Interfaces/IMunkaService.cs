@@ -4,11 +4,11 @@ namespace Autoszerelo.UI.Services.Interfaces
 {
     public interface IMunkaService
     {
-        public Task Add(Munka munka);
-        public Task<Munka> Get(Guid ID);
-        public Task<IEnumerable<Munka>> GetAll();
-        public Task Update(Munka munka);
-        public Task Delete(Guid ID);
-        public Task NextWorkingState(Guid ID);
+        public Task AddAsync(Munka munka);
+        public Task<Munka> GetAsync(Guid ID);
+        public Task<IEnumerable<Munka>> GetAllAsync();
+        public Task UpdateAsync(Munka munka);
+        public Task DeleteAsync(Guid ID);
+        public Task NextWorkingStateAsync(Guid ID);
     }
 }

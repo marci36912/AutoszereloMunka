@@ -85,20 +85,20 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        Job = await MunkaService.Get(ID);
+        Job = await MunkaService.GetAsync(ID);
         munkaora = new MunkaoraKalkulator(Job);
         hasNotLoaded = false;
     }
 
     private async Task DeleteAsync()
     {
-        await MunkaService.Delete(Job.MunkaAzonosito);
+        await MunkaService.DeleteAsync(Job.MunkaAzonosito);
         NavigationManager.NavigateTo("/munkak");
     }
 
     private async Task NextAllapot()
     {
-        await MunkaService.NextWorkingState(Job.MunkaAzonosito);
+        await MunkaService.NextWorkingStateAsync(Job.MunkaAzonosito);
         NavigationManager.NavigateTo("/munkak");
     }
 }

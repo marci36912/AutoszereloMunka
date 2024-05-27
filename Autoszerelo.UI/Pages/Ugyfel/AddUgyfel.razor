@@ -1,7 +1,7 @@
 ﻿@page "/ugyfel/add"
 @using Autoszerelo.UI.Services.Interfaces
 @using Autoszerelo.DataClasses
-@inject IUgyfelService PersonService
+@inject IUgyfelService UgyfelService
 @inject NavigationManager NavigationManager
 
 <PageTitle>Ugyfel felvetel</PageTitle>
@@ -34,7 +34,7 @@
 
     private async Task AddNewCostumer()
     {
-        await PersonService.Add(Costumer);
+        await UgyfelService.AddAsync(Costumer);
         NavigationManager.NavigateTo("/ugyfelek");
     }
 }

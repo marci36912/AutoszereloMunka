@@ -6,9 +6,15 @@
 
 <PageTitle>Ugyfel</PageTitle>
 
-<h3 class="text-center my-2">Ugyfel modositasa</h3>
-<EditForm Model="Costumer" OnValidSubmit="() => UpdateCostumer()">
-    <DataAnnotationsValidator />
+@if (Costumer == null)
+{
+    <p>Az ugyfel nem modosithato.</p>
+}
+else
+{
+    <h3 class="text-center my-2">Ugyfel modositasa</h3>
+    <EditForm Model="Costumer" OnValidSubmit="() => UpdateCostumer()">
+        <DataAnnotationsValidator />
         <div class="form-group mb-3">
             <label class="form-label">Nev</label>
             <InputText @bind-Value="@Costumer.Nev" class="form-control" />
@@ -26,21 +32,22 @@
         </div>
 
         <button class="btn btn-primary mb-3" type="submit">Adatok modositasa</button>
-</EditForm>
+    </EditForm>
+}
 
 @code {
     [Parameter]
     public Guid id { get; set; }
-    private Ugyfel Costumer { get; set; }
+    private Ugyfel Costumer { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
-        Costumer = await PersonService.Get(id);
+        Costumer = await PersonService.GetAsync(id);
     }
 
     private async Task UpdateCostumer()
     {
-        await PersonService.Update(Costumer);
+        await PersonService.UpdateAsync(Costumer);
         NavigationManager.NavigateTo("/ugyfelek");
     }
 }
