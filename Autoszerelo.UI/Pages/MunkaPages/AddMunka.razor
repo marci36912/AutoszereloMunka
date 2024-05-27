@@ -88,8 +88,15 @@ else
 
     private async Task AddJob()
     {
-        await MunkaService.AddAsync(Job);
-        await JsRuntime.InvokeVoidAsync("alert", "Uj munka adatai sikeresen rogzitesre kerultek!");
-        NavigationManager.NavigateTo("/munkak");
+        var result = await MunkaService.AddAsync(Job);
+        if(result == System.Net.HttpStatusCode.OK)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Uj munka adatai sikeresen rogzitesre kerultek!");
+            NavigationManager.NavigateTo("/munkak");
+        }
+        else
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Hiba tortent a munka rogzitese soran!");
+        }
     }
 }

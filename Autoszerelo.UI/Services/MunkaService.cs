@@ -1,6 +1,7 @@
 ﻿using Autoszerelo.DataClasses;
 using Autoszerelo.UI.Services.Interfaces;
 using System;
+using System.Net;
 using System.Net.Http.Json;
 
 namespace Autoszerelo.UI.Services
@@ -12,14 +13,14 @@ namespace Autoszerelo.UI.Services
         {
             _httpClient = httpClient;
         }
-        public async Task AddAsync(Munka munka)
+        public async Task<HttpStatusCode> AddAsync(Munka munka)
         {
-            await _httpClient.PostAsJsonAsync("/Munkak", munka);
+            return (await _httpClient.PostAsJsonAsync("/Munkak", munka)).StatusCode;
         }
 
-        public async Task DeleteAsync(Guid ID)
+        public async Task<HttpStatusCode> DeleteAsync(Guid ID)
         {
-            await _httpClient.DeleteAsync($"/Munkak/{ID}");
+            return (await _httpClient.DeleteAsync($"/Munkak/{ID}")).StatusCode;
         }
 
         public async Task<Munka> GetAsync(Guid ID)
@@ -32,15 +33,15 @@ namespace Autoszerelo.UI.Services
             return await _httpClient.GetFromJsonAsync<IEnumerable<Munka>>("/Munkak");
         }
 
-        public async Task NextWorkingStateAsync(Guid ID)
+        public async Task<HttpStatusCode> NextWorkingStateAsync(Guid ID)
         {
-            await _httpClient.PutAsJsonAsync($"/Munkak/next/{ID}", ID);
+            return (await _httpClient.PutAsJsonAsync($"/Munkak/next/{ID}", ID)).StatusCode;
         }
 
-        public async Task UpdateAsync(Munka munka)
+        public async Task<HttpStatusCode> UpdateAsync(Munka munka)
         {
             var id = munka.MunkaAzonosito;
-            await _httpClient.PutAsJsonAsync($"/Munkak/{id}", munka);
+            return (await _httpClient.PutAsJsonAsync($"/Munkak/{id}", munka)).StatusCode;
         }
     }
 }

@@ -63,8 +63,15 @@ else
 
     private async Task UpdateJob()
     {
-        await MunkaService.UpdateAsync(Job);
-        await JsRuntime.InvokeVoidAsync("alert", "A munka adatai sikeresen frissitesre kerultek!");
-        NavigationManager.NavigateTo("/munkak");
+        var result = await MunkaService.UpdateAsync(Job);
+        if (result == System.Net.HttpStatusCode.OK)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "A munka adatai sikeresen frissitesre kerultek!");
+            NavigationManager.NavigateTo("/munkak");
+        }
+        else
+        {
+            await JsRuntime.InvokeVoidAsync("alert", "Hiba tortent a munka rogzitese kozben!");
+        }
     }
 }

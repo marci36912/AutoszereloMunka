@@ -96,8 +96,11 @@ else
         bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", $"Biztosan torolni szeretned az alabbi munkat?");
         if (confirmed)
         {
-            await MunkaService.DeleteAsync(Job.MunkaAzonosito);
-            NavigationManager.NavigateTo("/munkak");
+            var result = await MunkaService.DeleteAsync(Job.MunkaAzonosito);
+            if(result == System.Net.HttpStatusCode.OK)
+            {
+                NavigationManager.NavigateTo("/munkak");
+            }
         }
     }
 
@@ -106,8 +109,11 @@ else
         bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", $"Biztosan frissiteni szeretned az alabbi munka allapotat?");
         if (confirmed)
         {
-            await MunkaService.NextWorkingStateAsync(Job.MunkaAzonosito);
-            NavigationManager.NavigateTo("/munkak");
+            var result = await MunkaService.NextWorkingStateAsync(Job.MunkaAzonosito);
+            if (result == System.Net.HttpStatusCode.OK)
+            {
+                NavigationManager.NavigateTo("/munkak");
+            }
         }
     }
 }

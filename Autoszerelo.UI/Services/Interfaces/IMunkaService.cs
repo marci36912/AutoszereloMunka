@@ -1,14 +1,15 @@
 ﻿using Autoszerelo.DataClasses;
+using System.Net;
 
 namespace Autoszerelo.UI.Services.Interfaces
 {
     public interface IMunkaService
     {
-        public Task AddAsync(Munka munka);
+        public Task<HttpStatusCode> AddAsync(Munka munka);
         public Task<Munka> GetAsync(Guid ID);
         public Task<IEnumerable<Munka>> GetAllAsync();
-        public Task UpdateAsync(Munka munka);
-        public Task DeleteAsync(Guid ID);
-        public Task NextWorkingStateAsync(Guid ID);
+        public Task<HttpStatusCode> UpdateAsync(Munka munka);
+        public Task<HttpStatusCode> DeleteAsync(Guid ID);
+        public Task<HttpStatusCode> NextWorkingStateAsync(Guid ID);
     }
 }
