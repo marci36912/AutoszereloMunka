@@ -24,12 +24,24 @@ else
         <thead>
             <tr>
                 <th scope="col"></th>
-                <th scope="col">Munka kategoria</th>
-                <th scope="col">Hiba sulyossaga</th>
-                <th scope="col">Hiba leirasa</th>
-                <th scope="col">Jarmu rendszama</th>
-                <th scope="col">Jarmu gyartasi eve</th>
-                <th scope="col">Munka allapota</th>
+                <th scope="col">
+                        <button class="btn" @onclick="SortKategoria">Munka kategoria</button>
+                </th>
+                <th scope="col">
+                        <button class="btn" @onclick="SortSulyossag">Hiba sulyossaga</button>
+                </th>
+                <th scope="col">
+                        <button class="btn" @onclick="SortLeiras">Hiba leirasa</button>
+                    </th>
+                <th scope="col">
+                        <button class="btn" @onclick="SortRendszam">Jarmu rendszama</button>
+                </th>
+                <th scope="col">
+                        <button class="btn" @onclick="SortEv">Jarmu gyartasi eve</button>
+                    </th>
+                <th scope="col">
+                        <button class="btn" @onclick="SortAllapot">Munka allapota</button>
+                    </th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -63,5 +75,101 @@ else
         Jobs = await MunkaService.GetAllAsync();
         hasNotLoaded = false;
     }
+    #region sorting
+    private bool sortedKategoria = true;
+    private void SortKategoria()
+    {
+        if (sortedKategoria)
+        {
+            Jobs = Jobs.OrderBy(x => x.MunkaKategoria).ToList();
+        }
+        else
+        {
+            Jobs = Jobs.OrderByDescending(x => x.MunkaKategoria).ToList();
+        }
 
+        sortedKategoria = !sortedKategoria;
+        index = 0;
+    }
+
+    private bool sortedSuly = true;
+    private void SortSulyossag()
+    {
+        if(sortedSuly)
+        {
+            Jobs = Jobs.OrderBy(x => x.HibaSulyossaga).ToList();
+        }
+        else
+        {
+            Jobs = Jobs.OrderByDescending(x => x.HibaSulyossaga).ToList();
+        }
+
+        sortedSuly = !sortedSuly;
+        index = 0;
+    }
+
+    private bool sortedLeiras = true;
+    private void SortLeiras()
+    {
+        if (sortedLeiras)
+        {
+            Jobs = Jobs.OrderBy(x => x.HibaRovidLeirasa).ToList();
+        }
+        else
+        {
+            Jobs = Jobs.OrderByDescending(x => x.HibaRovidLeirasa).ToList();
+        }
+
+        sortedLeiras = !sortedLeiras;
+        index = 0;
+    }
+
+    private bool sortedRendszam = true;
+    private void SortRendszam()
+    {
+        if (sortedRendszam)
+        {
+            Jobs = Jobs.OrderBy(x => x.Rendszam).ToList();
+        }
+        else
+        {
+            Jobs = Jobs.OrderByDescending(x => x.Rendszam).ToList();
+        }
+
+        sortedRendszam = !sortedRendszam;
+        index = 0;
+    }
+
+    private bool sortedEv = true;
+    private void SortEv()
+    {
+        if (sortedEv)
+        {
+            Jobs = Jobs.OrderBy(x => x.GyartasiEv).ToList();
+        }
+        else
+        {
+            Jobs = Jobs.OrderByDescending(x => x.GyartasiEv).ToList();
+        }
+
+        sortedEv = !sortedEv;
+        index = 0;
+    }
+
+    private bool sortedAllapot = true;
+    private void SortAllapot()
+    {
+        if (sortedAllapot)
+        {
+            Jobs = Jobs.OrderBy(x => x.MunkaAllapot).ToList();
+        }
+        else
+        {
+            Jobs = Jobs.OrderByDescending(x => x.MunkaAllapot).ToList();
+        }
+
+        sortedAllapot = !sortedAllapot;
+        index = 0;
+    }
+    #endregion
 }
