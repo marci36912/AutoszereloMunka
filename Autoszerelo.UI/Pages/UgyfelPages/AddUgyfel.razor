@@ -3,6 +3,7 @@
 @using Autoszerelo.DataClasses
 @inject IUgyfelService UgyfelService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
 
 <PageTitle>Ugyfel felvetel</PageTitle>
 
@@ -35,6 +36,7 @@
     private async Task AddNewCostumer()
     {
         await UgyfelService.AddAsync(Costumer);
+        await JsRuntime.InvokeVoidAsync("alert", "Az ugyfel adatai sikeresen rogzitesre kerultek!");
         NavigationManager.NavigateTo("/ugyfelek");
     }
 }

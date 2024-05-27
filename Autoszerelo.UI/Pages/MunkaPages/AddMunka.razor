@@ -4,6 +4,7 @@
 @inject IMunkaService MunkaService
 @inject IUgyfelService UgyfelService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
 
 <PageTitle>Munka felvetel</PageTitle>
 <h3 class="text-center my-2">Uj munka felvetele</h3>
@@ -88,6 +89,7 @@ else
     private async Task AddJob()
     {
         await MunkaService.AddAsync(Job);
+        await JsRuntime.InvokeVoidAsync("alert", "Uj munka adatai sikeresen rogzitesre kerultek!");
         NavigationManager.NavigateTo("/munkak");
     }
 }

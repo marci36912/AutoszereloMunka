@@ -11701,3 +11701,922 @@ FROM `Munkak` AS `m`
 2024-05-27 07:38:01.029 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
 2024-05-27 07:38:01.029 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3025 application/json; charset=utf-8 1.7141ms
 2024-05-27 07:38:20.106 +02:00 [INF] Application is shutting down...
+2024-05-27 09:28:49.473 +02:00 [INF] User profile is available. Using 'C:\Users\facsiga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-27 09:28:49.730 +02:00 [INF] Now listening on: https://localhost:7101
+2024-05-27 09:28:49.730 +02:00 [INF] Now listening on: http://localhost:5192
+2024-05-27 09:28:49.731 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-27 09:28:49.731 +02:00 [INF] Hosting environment: Development
+2024-05-27 09:28:49.731 +02:00 [INF] Content root path: C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo
+2024-05-27 09:28:57.690 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:28:57.707 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:28:57.746 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:28:57.759 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:29:02.166 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 4404.3088ms
+2024-05-27 09:29:02.166 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:29:02.167 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1063
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 425
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 932
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 938
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 419
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 381
+   at Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(String connectionString)
+   at Autoszerelo.Program.<>c__DisplayClass0_0.<Main>b__2(DbContextOptionsBuilder options) in C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo\Program.cs:line 45
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__DisplayClass1_0`2.<AddDbContext>b__0(IServiceProvider _, DbContextOptionsBuilder b)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.CreateDbContextOptions[TContext](IServiceProvider applicationServiceProvider, Action`2 optionsAction)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__DisplayClass17_0`1.<AddCoreServices>b__0(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__17`1.<AddCoreServices>b__17_1(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method4(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-27 09:29:02.332 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 500 null text/plain; charset=utf-8 4645.1168ms
+2024-05-27 09:29:20.449 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:29:20.450 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:29:20.450 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:29:20.452 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:29:24.536 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 4084.0486ms
+2024-05-27 09:29:24.536 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:29:24.536 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1063
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 425
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 932
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 938
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 419
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 381
+   at Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(String connectionString)
+   at Autoszerelo.Program.<>c__DisplayClass0_0.<Main>b__2(DbContextOptionsBuilder options) in C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo\Program.cs:line 45
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__DisplayClass1_0`2.<AddDbContext>b__0(IServiceProvider _, DbContextOptionsBuilder b)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.CreateDbContextOptions[TContext](IServiceProvider applicationServiceProvider, Action`2 optionsAction)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__DisplayClass17_0`1.<AddCoreServices>b__0(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__17`1.<AddCoreServices>b__17_1(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method6(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-27 09:29:24.540 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 500 null text/plain; charset=utf-8 4091.1066ms
+2024-05-27 09:29:24.618 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:29:24.619 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:29:24.619 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:29:24.620 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:29:26.861 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:29:26.862 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:29:26.862 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:29:26.862 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:29:28.701 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 4080.8824ms
+2024-05-27 09:29:28.701 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:29:28.701 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1063
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 425
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 932
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 938
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 419
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 381
+   at Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(String connectionString)
+   at Autoszerelo.Program.<>c__DisplayClass0_0.<Main>b__2(DbContextOptionsBuilder options) in C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo\Program.cs:line 45
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__DisplayClass1_0`2.<AddDbContext>b__0(IServiceProvider _, DbContextOptionsBuilder b)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.CreateDbContextOptions[TContext](IServiceProvider applicationServiceProvider, Action`2 optionsAction)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__DisplayClass17_0`1.<AddCoreServices>b__0(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__17`1.<AddCoreServices>b__17_1(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method4(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-27 09:29:28.704 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 500 null text/plain; charset=utf-8 4086.4088ms
+2024-05-27 09:29:32.780 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 5918.2699ms
+2024-05-27 09:29:32.780 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:29:32.781 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1063
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 425
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 932
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 938
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 419
+   at MySqlConnector.MySqlConnection.Open() in /_/src/MySqlConnector/MySqlConnection.cs:line 381
+   at Microsoft.EntityFrameworkCore.ServerVersion.AutoDetect(String connectionString)
+   at Autoszerelo.Program.<>c__DisplayClass0_0.<Main>b__2(DbContextOptionsBuilder options) in C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo\Program.cs:line 45
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__DisplayClass1_0`2.<AddDbContext>b__0(IServiceProvider _, DbContextOptionsBuilder b)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.CreateDbContextOptions[TContext](IServiceProvider applicationServiceProvider, Action`2 optionsAction)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__DisplayClass17_0`1.<AddCoreServices>b__0(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.EntityFrameworkServiceCollectionExtensions.<>c__17`1.<AddCoreServices>b__17_1(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method4(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-27 09:29:32.783 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 500 null text/plain; charset=utf-8 5922.1667ms
+2024-05-27 09:29:42.857 +02:00 [INF] Application is shutting down...
+2024-05-27 09:30:02.105 +02:00 [INF] User profile is available. Using 'C:\Users\facsiga\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-27 09:30:02.175 +02:00 [INF] Now listening on: https://localhost:7101
+2024-05-27 09:30:02.175 +02:00 [INF] Now listening on: http://localhost:5192
+2024-05-27 09:30:02.176 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-27 09:30:02.176 +02:00 [INF] Hosting environment: Development
+2024-05-27 09:30:02.176 +02:00 [INF] Content root path: C:\Users\facsiga\Desktop\bead\Autoszerelo\Autoszerelo
+2024-05-27 09:30:15.322 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:30:15.339 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:30:15.351 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:30:15.364 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:30:15.567 +02:00 [INF] All costumers querried from database
+2024-05-27 09:30:16.282 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:30:16.339 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:30:16.501 +02:00 [INF] Executed DbCommand (18ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`UgyfelSzam` = @__get_Item_0
+2024-05-27 09:30:16.532 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`UgyfelSzam` = @__get_Item_0
+2024-05-27 09:30:16.537 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1170.7642ms
+2024-05-27 09:30:16.537 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:30:16.538 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1240 application/json; charset=utf-8 1218.6068ms
+2024-05-27 09:30:16.603 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:30:16.604 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:30:16.604 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:30:16.605 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:30:16.606 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:30:16.609 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:30:16.609 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:30:16.610 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 4.5324ms
+2024-05-27 09:30:16.610 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:30:16.610 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3025 application/json; charset=utf-8 7.9962ms
+2024-05-27 09:34:09.074 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:34:09.075 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:34:09.075 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:34:09.075 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:34:09.076 +02:00 [INF] All costumers querried from database
+2024-05-27 09:34:09.077 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:34:09.077 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:34:09.078 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 2.1323ms
+2024-05-27 09:34:09.078 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:34:09.078 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1240 application/json; charset=utf-8 4.0125ms
+2024-05-27 09:34:09.170 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:34:09.170 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:34:09.170 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:34:09.170 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:34:09.171 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:34:09.171 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:34:09.172 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:34:09.172 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.576ms
+2024-05-27 09:34:09.172 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:34:09.172 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3025 application/json; charset=utf-8 2.4399ms
+2024-05-27 09:34:16.073 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/Ugyfelek - null null
+2024-05-27 09:34:16.073 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:34:16.074 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/Ugyfelek - 204 null null 0.9762ms
+2024-05-27 09:34:16.076 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7101/Ugyfelek - application/json; charset=utf-8 121
+2024-05-27 09:34:16.076 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:34:16.076 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo)'
+2024-05-27 09:34:16.080 +02:00 [INF] Route matched with {action = "Add", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(Autoszerelo.DataClasses.Ugyfel) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:34:16.109 +02:00 [INF] Costumer querried from database
+2024-05-27 09:34:16.133 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:34:16.204 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-27 09:34:16.204 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo) in 124.1128ms
+2024-05-27 09:34:16.204 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo)'
+2024-05-27 09:34:16.204 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7101/Ugyfelek - 200 0 null 128.4126ms
+2024-05-27 09:34:16.209 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `Ugyfelek` (`Ugyfelszam`, `Email`, `Lakcim`, `Nev`)
+VALUES (@p0, @p1, @p2, @p3);
+2024-05-27 09:34:16.214 +02:00 [INF] New costumer recorded: ads
+2024-05-27 09:34:18.761 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:34:18.761 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:34:18.761 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:34:18.761 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:34:18.761 +02:00 [INF] All costumers querried from database
+2024-05-27 09:34:18.762 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:34:18.762 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:34:18.763 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 2.2155ms
+2024-05-27 09:34:18.763 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:34:18.763 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1362 application/json; charset=utf-8 2.8959ms
+2024-05-27 09:34:26.235 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7e1f-69a8-40f3-842a-035e9b037383 - null null
+2024-05-27 09:34:26.235 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:34:26.236 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-27 09:34:26.237 +02:00 [INF] Route matched with {action = "Get", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Ugyfel] Get(System.Guid) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:34:26.239 +02:00 [INF] Costumer querried from database
+2024-05-27 09:34:26.243 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:34:26.243 +02:00 [INF] Executing OkObjectResult, writing value of type 'Autoszerelo.DataClasses.Ugyfel'.
+2024-05-27 09:34:26.244 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo) in 6.0975ms
+2024-05-27 09:34:26.244 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-27 09:34:26.244 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7e1f-69a8-40f3-842a-035e9b037383 - 200 121 application/json; charset=utf-8 8.9447ms
+2024-05-27 09:35:56.497 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:35:56.498 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:35:56.498 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:35:56.498 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:35:56.498 +02:00 [INF] All costumers querried from database
+2024-05-27 09:35:56.499 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:35:56.499 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:35:56.499 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.2861ms
+2024-05-27 09:35:56.499 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:35:56.499 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1362 application/json; charset=utf-8 1.9385ms
+2024-05-27 09:35:56.608 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:35:56.608 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:35:56.608 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:35:56.608 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:35:56.608 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:35:56.609 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:35:56.609 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:35:56.610 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.4903ms
+2024-05-27 09:35:56.610 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:35:56.610 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3025 application/json; charset=utf-8 2.2309ms
+2024-05-27 09:35:57.878 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:35:57.878 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:35:57.879 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:35:57.879 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:35:57.879 +02:00 [INF] All costumers querried from database
+2024-05-27 09:35:57.880 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:35:57.880 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:35:57.880 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.2678ms
+2024-05-27 09:35:57.880 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:35:57.881 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1362 application/json; charset=utf-8 2.3737ms
+2024-05-27 09:35:58.920 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7e1f-69a8-40f3-842a-035e9b037383 - null null
+2024-05-27 09:35:58.921 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:35:58.921 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-27 09:35:58.921 +02:00 [INF] Route matched with {action = "Get", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Ugyfel] Get(System.Guid) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:35:58.921 +02:00 [INF] Costumer querried from database
+2024-05-27 09:35:58.922 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:35:58.922 +02:00 [INF] Executing OkObjectResult, writing value of type 'Autoszerelo.DataClasses.Ugyfel'.
+2024-05-27 09:35:58.923 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo) in 1.7471ms
+2024-05-27 09:35:58.923 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-27 09:35:58.923 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7e1f-69a8-40f3-842a-035e9b037383 - 200 121 application/json; charset=utf-8 2.5651ms
+2024-05-27 09:36:01.312 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/Ugyfelek/08dc7e1f-69a8-40f3-842a-035e9b037383 - null null
+2024-05-27 09:36:01.312 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:36:01.313 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/Ugyfelek/08dc7e1f-69a8-40f3-842a-035e9b037383 - 204 null null 0.3791ms
+2024-05-27 09:36:01.314 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7101/Ugyfelek/08dc7e1f-69a8-40f3-842a-035e9b037383 - null null
+2024-05-27 09:36:01.314 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:36:01.314 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Delete (Autoszerelo)'
+2024-05-27 09:36:01.315 +02:00 [INF] Route matched with {action = "Delete", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(System.Guid) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:36:01.316 +02:00 [INF] Costumer querried from database
+2024-05-27 09:36:01.316 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:36:01.317 +02:00 [INF] Costumer querried from database
+2024-05-27 09:36:01.318 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:36:01.322 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-27 09:36:01.322 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Delete (Autoszerelo) in 6.9884ms
+2024-05-27 09:36:01.322 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Delete (Autoszerelo)'
+2024-05-27 09:36:01.322 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7101/Ugyfelek/08dc7e1f-69a8-40f3-842a-035e9b037383 - 200 0 null 8.4651ms
+2024-05-27 09:36:01.328 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Ugyfelek`
+WHERE `Ugyfelszam` = @p0;
+SELECT ROW_COUNT();
+2024-05-27 09:36:01.332 +02:00 [INF] ads deleted from the database
+2024-05-27 09:36:01.351 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:36:01.351 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:36:01.351 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:36:01.351 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:36:01.351 +02:00 [INF] All costumers querried from database
+2024-05-27 09:36:01.352 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:36:01.352 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:36:01.352 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 0.9835ms
+2024-05-27 09:36:01.352 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:36:01.352 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1240 application/json; charset=utf-8 1.4785ms
+2024-05-27 09:36:04.355 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:36:04.355 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:36:04.355 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:36:04.355 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:36:04.356 +02:00 [INF] All costumers querried from database
+2024-05-27 09:36:04.356 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:36:04.357 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:36:04.357 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.2199ms
+2024-05-27 09:36:04.357 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:36:04.357 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1240 application/json; charset=utf-8 1.883ms
+2024-05-27 09:36:05.554 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:36:05.555 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:36:05.555 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:36:05.555 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:36:05.555 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:36:05.556 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:36:05.556 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:36:05.556 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.3941ms
+2024-05-27 09:36:05.556 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:36:05.557 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3025 application/json; charset=utf-8 2.2203ms
+2024-05-27 09:39:39.959 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:39:39.959 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:39:39.959 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:39:39.959 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:39:39.959 +02:00 [INF] All costumers querried from database
+2024-05-27 09:39:39.965 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:39:39.965 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:39:39.965 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 5.5727ms
+2024-05-27 09:39:39.965 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:39:39.965 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1240 application/json; charset=utf-8 6.1932ms
+2024-05-27 09:39:40.060 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:39:40.060 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:39:40.061 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:39:40.061 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:39:40.061 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:39:40.062 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:39:40.062 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:39:40.062 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.2734ms
+2024-05-27 09:39:40.062 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:39:40.062 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3025 application/json; charset=utf-8 1.885ms
+2024-05-27 09:39:53.584 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:39:53.584 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:39:53.585 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:39:53.585 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:39:53.585 +02:00 [INF] All costumers querried from database
+2024-05-27 09:39:53.585 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:39:53.586 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:39:53.586 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.1873ms
+2024-05-27 09:39:53.586 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:39:53.586 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1240 application/json; charset=utf-8 1.8205ms
+2024-05-27 09:39:53.688 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:39:53.688 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:39:53.688 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:39:53.688 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:39:53.688 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:39:53.689 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:39:53.689 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:39:53.689 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.0294ms
+2024-05-27 09:39:53.689 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:39:53.689 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3025 application/json; charset=utf-8 1.5794ms
+2024-05-27 09:39:55.596 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:39:55.596 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:39:55.596 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:39:55.596 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:39:55.596 +02:00 [INF] All costumers querried from database
+2024-05-27 09:39:55.597 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:39:55.597 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:39:55.597 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 0.9961ms
+2024-05-27 09:39:55.597 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:39:55.598 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1240 application/json; charset=utf-8 1.5382ms
+2024-05-27 09:40:02.902 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7101/Ugyfelek - application/json; charset=utf-8 119
+2024-05-27 09:40:02.902 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:02.902 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo)'
+2024-05-27 09:40:02.903 +02:00 [INF] Route matched with {action = "Add", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(Autoszerelo.DataClasses.Ugyfel) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:40:02.903 +02:00 [INF] Costumer querried from database
+2024-05-27 09:40:02.904 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:40:02.906 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-27 09:40:02.906 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo) in 3.2607ms
+2024-05-27 09:40:02.906 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Add (Autoszerelo)'
+2024-05-27 09:40:02.906 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7101/Ugyfelek - 200 0 null 3.7554ms
+2024-05-27 09:40:02.908 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `Ugyfelek` (`Ugyfelszam`, `Email`, `Lakcim`, `Nev`)
+VALUES (@p0, @p1, @p2, @p3);
+2024-05-27 09:40:02.909 +02:00 [INF] New costumer recorded: asd
+2024-05-27 09:40:05.169 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:40:05.169 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:05.170 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:40:05.170 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:40:05.170 +02:00 [INF] All costumers querried from database
+2024-05-27 09:40:05.170 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:40:05.171 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:40:05.171 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.047ms
+2024-05-27 09:40:05.171 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:40:05.171 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1360 application/json; charset=utf-8 1.6728ms
+2024-05-27 09:40:11.206 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7e20-3857-41d3-860b-f95c6172b00b - null null
+2024-05-27 09:40:11.207 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:11.207 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-27 09:40:11.207 +02:00 [INF] Route matched with {action = "Get", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Ugyfel] Get(System.Guid) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:40:11.207 +02:00 [INF] Costumer querried from database
+2024-05-27 09:40:11.208 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:40:11.208 +02:00 [INF] Executing OkObjectResult, writing value of type 'Autoszerelo.DataClasses.Ugyfel'.
+2024-05-27 09:40:11.208 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo) in 1.5397ms
+2024-05-27 09:40:11.208 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-27 09:40:11.208 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7e20-3857-41d3-860b-f95c6172b00b - 200 119 application/json; charset=utf-8 2.1008ms
+2024-05-27 09:40:13.768 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:40:13.768 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:13.768 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:40:13.768 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:40:13.768 +02:00 [INF] All costumers querried from database
+2024-05-27 09:40:13.769 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:40:13.769 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:40:13.769 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.1227ms
+2024-05-27 09:40:13.769 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:40:13.769 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1360 application/json; charset=utf-8 1.6621ms
+2024-05-27 09:40:37.136 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/Munkak - null null
+2024-05-27 09:40:37.136 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:37.136 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/Munkak - 204 null null 0.2984ms
+2024-05-27 09:40:37.137 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7101/Munkak - application/json; charset=utf-8 259
+2024-05-27 09:40:37.137 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:37.137 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Add (Autoszerelo)'
+2024-05-27 09:40:37.139 +02:00 [INF] Route matched with {action = "Add", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Add(Autoszerelo.DataClasses.Munka) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:40:37.153 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:40:37.154 +02:00 [INF] Job querried from the database
+2024-05-27 09:40:37.157 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-27 09:40:37.157 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Add (Autoszerelo) in 18.7234ms
+2024-05-27 09:40:37.157 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Add (Autoszerelo)'
+2024-05-27 09:40:37.158 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7101/Munkak - 200 0 null 20.5919ms
+2024-05-27 09:40:37.164 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Date), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `Munkak` (`MunkaAzonosito`, `GyartasiEv`, `HibaRovidLeirasa`, `HibaSulyossaga`, `MunkaAllapot`, `MunkaKategoria`, `Rendszam`, `UgyfelSzam`)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2024-05-27 09:40:37.165 +02:00 [INF] New job (Futomu) recorded as 08dc7e20-4cc1-4261-8657-0fd31a3fc8ad for 08dc7e20-3857-41d3-860b-f95c6172b00b - AAA-204
+2024-05-27 09:40:39.440 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:40:39.440 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:39.440 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:40:39.440 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:40:39.440 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:40:39.441 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:40:39.441 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:40:39.442 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.9756ms
+2024-05-27 09:40:39.442 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:40:39.442 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3398 application/json; charset=utf-8 2.5741ms
+2024-05-27 09:40:44.107 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - null null
+2024-05-27 09:40:44.107 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:44.107 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-27 09:40:44.108 +02:00 [INF] Route matched with {action = "Get", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Munka] Get(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:40:44.109 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:40:44.109 +02:00 [INF] Job querried from the database
+2024-05-27 09:40:44.110 +02:00 [INF] Executing OkObjectResult, writing value of type 'Autoszerelo.DataClasses.Munka'.
+2024-05-27 09:40:44.110 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Get (Autoszerelo) in 1.8503ms
+2024-05-27 09:40:44.110 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-27 09:40:44.110 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - 200 372 application/json; charset=utf-8 3.3525ms
+2024-05-27 09:40:48.209 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/Munkak/next/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - null null
+2024-05-27 09:40:48.209 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:48.210 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/Munkak/next/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - 204 null null 0.3106ms
+2024-05-27 09:40:48.211 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7101/Munkak/next/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - application/json; charset=utf-8 38
+2024-05-27 09:40:48.211 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:48.211 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.UpdateMunkaallapot (Autoszerelo)'
+2024-05-27 09:40:48.212 +02:00 [INF] Route matched with {action = "UpdateMunkaallapot", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UpdateMunkaallapot(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:40:48.213 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:40:48.213 +02:00 [INF] Job querried from the database
+2024-05-27 09:40:48.214 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:40:48.214 +02:00 [INF] Job querried from the database
+2024-05-27 09:40:48.216 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-27 09:40:48.216 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.UpdateMunkaallapot (Autoszerelo) in 4.3249ms
+2024-05-27 09:40:48.216 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.UpdateMunkaallapot (Autoszerelo)'
+2024-05-27 09:40:48.217 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7101/Munkak/next/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - 200 0 null 5.5602ms
+2024-05-27 09:40:48.220 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Munkak` SET `MunkaAllapot` = @p0
+WHERE `MunkaAzonosito` = @p1;
+SELECT ROW_COUNT();
+2024-05-27 09:40:48.221 +02:00 [INF] Jobs status updated (08dc7e20-4cc1-4261-8657-0fd31a3fc8ad)
+2024-05-27 09:40:48.233 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:40:48.233 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:48.233 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:40:48.233 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:40:48.233 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:40:48.234 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:40:48.234 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:40:48.234 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 0.9906ms
+2024-05-27 09:40:48.234 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:40:48.234 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3398 application/json; charset=utf-8 1.4507ms
+2024-05-27 09:40:50.503 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - null null
+2024-05-27 09:40:50.503 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:40:50.503 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-27 09:40:50.504 +02:00 [INF] Route matched with {action = "Get", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Munka] Get(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:40:50.505 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:40:50.505 +02:00 [INF] Job querried from the database
+2024-05-27 09:40:50.505 +02:00 [INF] Executing OkObjectResult, writing value of type 'Autoszerelo.DataClasses.Munka'.
+2024-05-27 09:40:50.505 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Get (Autoszerelo) in 1.3399ms
+2024-05-27 09:40:50.505 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-27 09:40:50.505 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - 200 372 application/json; charset=utf-8 1.8824ms
+2024-05-27 09:41:00.949 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - null null
+2024-05-27 09:41:00.949 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:00.950 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-27 09:41:00.950 +02:00 [INF] Route matched with {action = "Get", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Munka] Get(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:41:00.951 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:00.951 +02:00 [INF] Job querried from the database
+2024-05-27 09:41:00.951 +02:00 [INF] Executing OkObjectResult, writing value of type 'Autoszerelo.DataClasses.Munka'.
+2024-05-27 09:41:00.951 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Get (Autoszerelo) in 1.4412ms
+2024-05-27 09:41:00.951 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-27 09:41:00.951 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - 200 372 application/json; charset=utf-8 1.9292ms
+2024-05-27 09:41:02.872 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - null null
+2024-05-27 09:41:02.872 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:02.872 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - 204 null null 0.255ms
+2024-05-27 09:41:02.873 +02:00 [INF] Request starting HTTP/2 PUT https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - application/json; charset=utf-8 372
+2024-05-27 09:41:02.873 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:02.873 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Update (Autoszerelo)'
+2024-05-27 09:41:02.874 +02:00 [INF] Route matched with {action = "Update", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Update(System.Guid, Autoszerelo.DataClasses.Munka) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:41:02.879 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:02.879 +02:00 [INF] Job querried from the database
+2024-05-27 09:41:02.880 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:02.880 +02:00 [INF] Job querried from the database
+2024-05-27 09:41:02.881 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-27 09:41:02.881 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Update (Autoszerelo) in 6.9762ms
+2024-05-27 09:41:02.881 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Update (Autoszerelo)'
+2024-05-27 09:41:02.881 +02:00 [INF] Request finished HTTP/2 PUT https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - 200 0 null 8.1535ms
+2024-05-27 09:41:02.884 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Munkak` SET `MunkaKategoria` = @p0
+WHERE `MunkaAzonosito` = @p1;
+SELECT ROW_COUNT();
+2024-05-27 09:41:02.885 +02:00 [INF] Jobs information updated (08dc7e20-4cc1-4261-8657-0fd31a3fc8ad)
+2024-05-27 09:41:05.087 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:41:05.087 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:05.087 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:41:05.087 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:41:05.087 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:41:05.088 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:41:05.088 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:41:05.089 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.1168ms
+2024-05-27 09:41:05.089 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:41:05.089 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3398 application/json; charset=utf-8 1.6404ms
+2024-05-27 09:41:43.205 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak/08dc7db0-f215-4a95-816f-4cc5f88824e2 - null null
+2024-05-27 09:41:43.205 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:43.205 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-27 09:41:43.205 +02:00 [INF] Route matched with {action = "Get", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Munka] Get(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:41:43.206 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:43.206 +02:00 [INF] Job querried from the database
+2024-05-27 09:41:43.207 +02:00 [INF] Executing OkObjectResult, writing value of type 'Castle.Proxies.MunkaProxy'.
+2024-05-27 09:41:43.207 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Get (Autoszerelo) in 1.429ms
+2024-05-27 09:41:43.207 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Get (Autoszerelo)'
+2024-05-27 09:41:43.207 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak/08dc7db0-f215-4a95-816f-4cc5f88824e2 - 200 380 application/json; charset=utf-8 1.8996ms
+2024-05-27 09:41:45.525 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/Munkak/08dc7db0-f215-4a95-816f-4cc5f88824e2 - null null
+2024-05-27 09:41:45.525 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:45.525 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/Munkak/08dc7db0-f215-4a95-816f-4cc5f88824e2 - 204 null null 0.2136ms
+2024-05-27 09:41:45.526 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7101/Munkak/08dc7db0-f215-4a95-816f-4cc5f88824e2 - null null
+2024-05-27 09:41:45.526 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:45.526 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Delete (Autoszerelo)'
+2024-05-27 09:41:45.527 +02:00 [INF] Route matched with {action = "Delete", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:41:45.528 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:45.528 +02:00 [INF] Job querried from the database
+2024-05-27 09:41:45.529 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:45.529 +02:00 [INF] Job querried from the database
+2024-05-27 09:41:45.530 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-27 09:41:45.530 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Delete (Autoszerelo) in 2.6098ms
+2024-05-27 09:41:45.530 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Delete (Autoszerelo)'
+2024-05-27 09:41:45.530 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7101/Munkak/08dc7db0-f215-4a95-816f-4cc5f88824e2 - 200 0 null 3.7766ms
+2024-05-27 09:41:45.536 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Munkak`
+WHERE `MunkaAzonosito` = @p0;
+SELECT ROW_COUNT();
+2024-05-27 09:41:45.538 +02:00 [INF] Job deleted from the database: 08dc7db0-f215-4a95-816f-4cc5f88824e2
+2024-05-27 09:41:45.548 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:41:45.548 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:45.548 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:41:45.548 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:41:45.548 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:41:45.549 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:41:45.549 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:41:45.549 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 0.9058ms
+2024-05-27 09:41:45.549 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:41:45.549 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 3017 application/json; charset=utf-8 1.2894ms
+2024-05-27 09:41:48.076 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:41:48.076 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:48.076 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:41:48.076 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:41:48.076 +02:00 [INF] All costumers querried from database
+2024-05-27 09:41:48.077 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:41:48.077 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:41:48.077 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 1.1678ms
+2024-05-27 09:41:48.077 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:41:48.077 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 1355 application/json; charset=utf-8 1.7301ms
+2024-05-27 09:41:49.423 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7e20-3857-41d3-860b-f95c6172b00b - null null
+2024-05-27 09:41:49.424 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:49.424 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-27 09:41:49.424 +02:00 [INF] Route matched with {action = "Get", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Autoszerelo.DataClasses.Ugyfel] Get(System.Guid) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:41:49.424 +02:00 [INF] Costumer querried from database
+2024-05-27 09:41:49.425 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:49.425 +02:00 [INF] Executing OkObjectResult, writing value of type 'Autoszerelo.DataClasses.Ugyfel'.
+2024-05-27 09:41:49.425 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo) in 1.4796ms
+2024-05-27 09:41:49.425 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Get (Autoszerelo)'
+2024-05-27 09:41:49.425 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/08dc7e20-3857-41d3-860b-f95c6172b00b - 200 360 application/json; charset=utf-8 1.9728ms
+2024-05-27 09:41:56.936 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - null null
+2024-05-27 09:41:56.936 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:56.936 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - 204 null null 0.214ms
+2024-05-27 09:41:56.937 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - null null
+2024-05-27 09:41:56.937 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:56.937 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.Delete (Autoszerelo)'
+2024-05-27 09:41:56.937 +02:00 [INF] Route matched with {action = "Delete", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(System.Guid) on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:41:56.938 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:56.938 +02:00 [INF] Job querried from the database
+2024-05-27 09:41:56.938 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+WHERE `m`.`MunkaAzonosito` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:56.938 +02:00 [INF] Job querried from the database
+2024-05-27 09:41:56.939 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-27 09:41:56.939 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.Delete (Autoszerelo) in 2.0174ms
+2024-05-27 09:41:56.939 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.Delete (Autoszerelo)'
+2024-05-27 09:41:56.939 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7101/Munkak/08dc7e20-4cc1-4261-8657-0fd31a3fc8ad - 200 0 null 2.3142ms
+2024-05-27 09:41:56.941 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Munkak`
+WHERE `MunkaAzonosito` = @p0;
+SELECT ROW_COUNT();
+2024-05-27 09:41:56.941 +02:00 [INF] Job deleted from the database: 08dc7e20-4cc1-4261-8657-0fd31a3fc8ad
+2024-05-27 09:41:56.944 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/Ugyfelek/08dc7e20-3857-41d3-860b-f95c6172b00b - null null
+2024-05-27 09:41:56.944 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:56.945 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/Ugyfelek/08dc7e20-3857-41d3-860b-f95c6172b00b - 204 null null 0.2213ms
+2024-05-27 09:41:56.945 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7101/Ugyfelek/08dc7e20-3857-41d3-860b-f95c6172b00b - null null
+2024-05-27 09:41:56.945 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:56.945 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.Delete (Autoszerelo)'
+2024-05-27 09:41:56.946 +02:00 [INF] Route matched with {action = "Delete", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(System.Guid) on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:41:56.946 +02:00 [INF] Costumer querried from database
+2024-05-27 09:41:56.946 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:56.947 +02:00 [INF] Costumer querried from database
+2024-05-27 09:41:56.947 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+WHERE `u`.`Ugyfelszam` = @__ID_0
+LIMIT 1
+2024-05-27 09:41:56.948 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-05-27 09:41:56.948 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.Delete (Autoszerelo) in 2.2414ms
+2024-05-27 09:41:56.948 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.Delete (Autoszerelo)'
+2024-05-27 09:41:56.948 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7101/Ugyfelek/08dc7e20-3857-41d3-860b-f95c6172b00b - 200 0 null 2.5933ms
+2024-05-27 09:41:56.950 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Ugyfelek`
+WHERE `Ugyfelszam` = @p0;
+SELECT ROW_COUNT();
+2024-05-27 09:41:56.950 +02:00 [INF] asd deleted from the database
+2024-05-27 09:41:56.967 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Ugyfelek/list - null null
+2024-05-27 09:41:56.967 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:56.967 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:41:56.967 +02:00 [INF] Route matched with {action = "GetAll", controller = "Ugyfelek"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Ugyfel]] GetAll() on controller Autoszerelo.Controllers.UgyfelekController (Autoszerelo).
+2024-05-27 09:41:56.967 +02:00 [INF] All costumers querried from database
+2024-05-27 09:41:56.968 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `u`.`Ugyfelszam`, `u`.`Email`, `u`.`Lakcim`, `u`.`Nev`
+FROM `Ugyfelek` AS `u`
+2024-05-27 09:41:56.968 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Ugyfel, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:41:56.968 +02:00 [INF] Executed action Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo) in 0.9442ms
+2024-05-27 09:41:56.968 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.UgyfelekController.GetAll (Autoszerelo)'
+2024-05-27 09:41:56.968 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Ugyfelek/list - 200 994 application/json; charset=utf-8 1.4012ms
+2024-05-27 09:41:58.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7101/Munkak - null null
+2024-05-27 09:41:58.109 +02:00 [INF] CORS policy execution successful.
+2024-05-27 09:41:58.109 +02:00 [INF] Executing endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:41:58.109 +02:00 [INF] Route matched with {action = "GetAll", controller = "Munkak"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Autoszerelo.DataClasses.Munka]] GetAll() on controller Autoszerelo.Controllers.MunkakController (Autoszerelo).
+2024-05-27 09:41:58.109 +02:00 [INF] All jobs querried from the database
+2024-05-27 09:41:58.110 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT `m`.`MunkaAzonosito`, `m`.`GyartasiEv`, `m`.`HibaRovidLeirasa`, `m`.`HibaSulyossaga`, `m`.`MunkaAllapot`, `m`.`MunkaKategoria`, `m`.`Rendszam`, `m`.`UgyfelSzam`
+FROM `Munkak` AS `m`
+2024-05-27 09:41:58.111 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Autoszerelo.DataClasses.Munka, SharedDataClasses, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-27 09:41:58.111 +02:00 [INF] Executed action Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo) in 1.3735ms
+2024-05-27 09:41:58.111 +02:00 [INF] Executed endpoint 'Autoszerelo.Controllers.MunkakController.GetAll (Autoszerelo)'
+2024-05-27 09:41:58.111 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7101/Munkak - 200 2644 application/json; charset=utf-8 1.9416ms
+2024-05-27 09:42:18.196 +02:00 [INF] Application is shutting down...

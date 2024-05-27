@@ -3,6 +3,7 @@
 @using Autoszerelo.DataClasses
 @inject IMunkaService MunkaService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
 
 <PageTitle>Munka</PageTitle>
 
@@ -63,6 +64,7 @@ else
     private async Task UpdateJob()
     {
         await MunkaService.UpdateAsync(Job);
+        await JsRuntime.InvokeVoidAsync("alert", "A munka adatai sikeresen frissitesre kerultek!");
         NavigationManager.NavigateTo("/munkak");
     }
 }

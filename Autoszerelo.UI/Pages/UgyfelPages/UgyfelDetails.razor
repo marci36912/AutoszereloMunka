@@ -5,6 +5,7 @@
 @inject IMunkaService MunkaService
 @inject IUgyfelService UgyfelService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
 
 <PageTitle>Ugyfel</PageTitle>
 
@@ -97,11 +98,18 @@ else
 
     private async Task DeleteAsync()
     {
-        foreach(var munka in Costumer.Munkak)
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", $"Biztosan torolni szeretned {Costumer.Nev} ugyfelet, es az osszes hozza tartozo munkat?"); // Confirm
+        if (confirmed)
         {
-            await MunkaService.DeleteAsync(munka.MunkaAzonosito);
+            if (Costumer.Munkak is not null && Costumer.Munkak.Count != 0)
+            {
+                foreach (var munka in Costumer.Munkak)
+                {
+                    await MunkaService.DeleteAsync(munka.MunkaAzonosito);
+                }
+            }
+            await UgyfelService.DeleteAsync(Costumer.Ugyfelszam);
+            NavigationManager.NavigateTo("/ugyfelek");
         }
-        await UgyfelService.DeleteAsync(Costumer.Ugyfelszam);
-        NavigationManager.NavigateTo("/ugyfelek");
     }
 }

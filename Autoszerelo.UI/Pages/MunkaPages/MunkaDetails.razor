@@ -3,6 +3,7 @@
 @using Autoszerelo.UI.Services
 @inject Autoszerelo.UI.Services.Interfaces.IMunkaService MunkaService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
 
 <PageTitle>Munka</PageTitle>
 <h3 class="text-center my-2">Munka adatai</h3>
@@ -92,13 +93,21 @@ else
 
     private async Task DeleteAsync()
     {
-        await MunkaService.DeleteAsync(Job.MunkaAzonosito);
-        NavigationManager.NavigateTo("/munkak");
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", $"Biztosan torolni szeretned az alabbi munkat?");
+        if (confirmed)
+        {
+            await MunkaService.DeleteAsync(Job.MunkaAzonosito);
+            NavigationManager.NavigateTo("/munkak");
+        }
     }
 
     private async Task NextAllapot()
     {
-        await MunkaService.NextWorkingStateAsync(Job.MunkaAzonosito);
-        NavigationManager.NavigateTo("/munkak");
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", $"Biztosan frissiteni szeretned az alabbi munka allapotat?");
+        if (confirmed)
+        {
+            await MunkaService.NextWorkingStateAsync(Job.MunkaAzonosito);
+            NavigationManager.NavigateTo("/munkak");
+        }
     }
 }
